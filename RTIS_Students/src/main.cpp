@@ -133,7 +133,26 @@ void paintingAnImageExercise() {
     }
 
     // Save the final result to file
-    film.save();
+    film.save("gaussFilter.bmp");
+}
+
+void initFilm(Film* f, int resX, int resY) {
+    // Create the original image
+    //  Draw a circle centered at centerX, centerY (in pixels, image space)
+    //   and with ray r (also in pixels)
+    int centerX = resX / 2;
+    int centerY = resY / 2;
+    int r = std::min(centerX, centerY) / 2;
+
+    for (int lin = 0; lin < resX; lin++) {
+        for (int col = 0; col < resY; col++) {
+            // Use the equation of the sphere to determine the pixel color
+            if ((lin - centerX) * (lin - centerX) + (col - centerY) * (col - centerY) < r * r) {
+                Vector3D v(1, 1, 0);
+                f->setPixelValue(col, lin, v);
+            }
+        }
+    }
 }
 
 void filteringAnImageExercise() {
@@ -144,50 +163,63 @@ void filteringAnImageExercise() {
     Film f1(resX, resY);
     Film f2(resX, resY);
 
-    // Create the original image
-    //  Draw a circle centered at centerX, centerY (in pixels, image space)
-    //   and with ray r (also in pixels)
-    int centerX = resX / 2;
-    int centerY = resY / 2;
-    int r = std::min(centerX, centerY) / 2;
-    for (int lin = 0; lin < resX; lin++) {
-        for (int col = 0; col < resY; col++) {
-            // Use the equation of the sphere to determine the pixel color
-            if ((lin - centerX) * (lin - centerX) + (col - centerY) * (col - centerY) < r * r) {
-                Vector3D v(1, 1, 0);
-                f1.setPixelValue(col, lin, v);
-            }
-        }
-    }
-
     // Filter-related variables
     // Declare here your filter-related variables
     // (e.g., FILTER SIZE)
     int iterations = 100;
-    Filter* filter = new Filter();
-    filter->setMean(3,3);
-    filter->setGauss(3,3);
-
-    Film* read = &f1;
-    Film* write = &f2;
-    Film* temp = NULL;
+    Filter *filter = new Filter();
+    Film *read, *write, *temp;
 
     // Implement here your image filtering algorithm
-    for(int it=0; it<iterations; it++){
+    // MEAN Filter
+    std::cout << "Mean filter . . . \n";
+
+    initFilm(&f1, resX, resY);
+    filter->setMean(3, 3);
+    read = &f1;
+    write = &f2;
+    for (int it = 0; it < iterations; it++) {
         filter->convolution(read, write);
 
         temp = read;
         read = write;
         write = temp;
     }
+    read->save("meanFilter.bmp");
+    std::cout << "Done!\n";
 
-    // DO NOT FORGET TO SAVE YOUR IMAGE!
-    read->save();
+    // GAUSS Filter
+    std::cout << "Gauss filter . . . \n";
+
+    initFilm(&f1, resX, resY);
+    filter->setGauss(3, 3);
+    read = &f1;
+    write = &f2;
+    for (int it = 0; it < iterations; it++) {
+        filter->convolution(read, write);
+
+        temp = read;
+        read = write;
+        write = temp;
+    }
+    read->save("gaussFilter.bmp");
+    std::cout << "Done!\n";
 }
 
 void completeSphereClassExercise() {
     // Make your intersection tests here
-    // (....)
+    Matrix4x4 transform;
+    transform = transform.translate(Vector3D(0, 0, 3));
+    Sphere s = Sphere(1, transform);
+    Ray r1 = Ray(Vector3D(0, 0, 0), Vector3D(0, 0, 1));
+    Ray r2 = Ray(Vector3D(0, 0, 0), Vector3D(0, 1, 0));
+
+    std::cout << "Sphere s:\n" << s << "\n";
+    std::cout << "Ray r1:\n" << r1 << "\n";
+    std::cout << "Ray r2:\n" << r2 << "\n";
+
+    std::cout << "Intersection of ray r1 with the sphere: " << string(s.rayIntersectP(r1) ? "True" : "False") << "\n";
+    std::cout << "Intersection of ray r2 with the sphere: " << string(s.rayIntersectP(r2) ? "True" : "False") << "\n";
 }
 
 void eqSolverExercise() {
@@ -196,17 +228,36 @@ void eqSolverExercise() {
 
     double A, B, C;
 
-    // (...)
+    A = 5;
+    B = 6;
+    C = 1;
 
-    bool hasRoots = true;
-    //bool hasRoots = solver.rootQuadEq(A, B, C, roots);
+    bool hasRoots = solver.rootQuadEq(A, B, C, roots);
 
     if (!hasRoots) {
-        std::cout << "Equation has no real roots!" << std::endl;
+        std::cout << "Equation " << A << "x^2 + " << B << "x + " << C << " has no real roots!" << std::endl;
     } else {
-        // SHOW THE SOLUTIONS OF THE EQUATION
-        // (...)
+        std::cout << "Equation " << A << "x^2 + " << B << "x + " << C << " solution:\n";
+        for (int i = 0; i < roots.nValues; i++)
+            std::cout << "\tx = " << roots.values[i] << "\n";
+        std::cout << "\n";
     }
+
+    A = 5;
+    B = 2;
+    C = 1;
+
+    hasRoots = solver.rootQuadEq(A, B, C, roots);
+
+    if (!hasRoots) {
+        std::cout << "Equation " << A << "x^2 + " << B << "x + " << C << " has no real roots!" << std::endl;
+    } else {
+        std::cout << "Equation " << A << "x^2 + " << B << "x + " << C << " solution:\n";
+        for (int i = 0; i < roots.nValues; i++)
+            std::cout << "\tx = " << roots.values[i] << "\n";
+        std::cout << "\n";
+    }
+    std::cout << "\n";
 }
 
 void raytrace() {
@@ -216,21 +267,57 @@ void raytrace() {
     resY = 512;
     Film film(resX, resY);
 
+    Matrix4x4 transform;
+    transform = transform.translate(Vector3D(0, 0, 3));
+    Sphere s = Sphere(1, transform);
+
+    Vector3D red = Vector3D(1, 0, 0);
+    Vector3D black = Vector3D(0, 0, 0);
+
     /* ******************* */
     /* Orthographic Camera */
     /* ******************* */
+    std::cout << "Orthographic raytracing . . . \n";
+
     Matrix4x4 cameraToWorld; // By default, this gives an ID transform
     // meaning that the camera space = world space
     OrtographicCamera camOrtho(cameraToWorld, film);
 
+    for (int j = 0; j < resY; j++) {
+        for (int i = 0; i < resX; i++) {
+            double u = (i + 0.5) / (double) resX;
+            double v = (j + 0.5) / (double) resY;
+            Ray r = camOrtho.generateRay(u, v);
+            if (s.rayIntersectP(r))
+                film.setPixelValue(i, j, red);
+            else
+                film.setPixelValue(i, j, black);
+        }
+    }
+    film.save("sphereOrtho.bmp");
+    std::cout << "Done!\n";
+
     /* ******************* */
     /* Perspective Camera */
     /* ******************* */
+    std::cout << "Perspective raytracing . . . \n";
+
     double fovRadians = Utils::degreesToRadians(60);
     PerspectiveCamera camPersp(cameraToWorld, fovRadians, film);
 
-    // Save the final result to file
-    film.save();
+    for (int j = 0; j < resY; j++) {
+        for (int i = 0; i < resX; i++) {
+            double u = (i + 0.5) / (double) resX;
+            double v = (j + 0.5) / (double) resY;
+            Ray r = camPersp.generateRay(u, v);
+            if (s.rayIntersectP(r))
+                film.setPixelValue(i, j, red);
+            else
+                film.setPixelValue(i, j, black);
+        }
+    }
+    film.save("spherePersp.bmp");
+    std::cout << "Done!\n";
 }
 
 int main() {
@@ -245,9 +332,9 @@ int main() {
     filteringAnImageExercise();
 
     // ASSIGNMENT 2
-    //eqSolverExercise();
-    //completeSphereClassExercise();
-    //raytrace();
+    eqSolverExercise();
+    completeSphereClassExercise();
+    raytrace();
 
     std::cout << "\n\n" << std::endl;
     return 0;

@@ -63,7 +63,6 @@ void Filter::setMean(size_t w, size_t h) {
             filter[j * width + i] = mean;
         }
     }
-    printFilter();
 }
 
 void Filter::setGauss(size_t w, size_t h, double sigma) {
@@ -88,5 +87,4 @@ void Filter::setGauss(size_t w, size_t h, double sigma) {
             filter[j * width + i] /= sum;
         }
     }
-    printFilter();
 }

@@ -162,9 +162,8 @@ Ray Matrix4x4::transformRay(const Ray &r) const
 {
     Ray transformedRay = r;
 
-    std::cout << "PLEASE COMPLETE THE Matrix4x4::transformRay()) FUNCTION!" << std::endl;
-
-    // (...)
+    transformedRay.o = this->transformPoint(transformedRay.o);
+    transformedRay.d = this->transformVector(transformedRay.d);
 
     return transformedRay;
 }
