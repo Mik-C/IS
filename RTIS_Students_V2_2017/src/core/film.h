@@ -30,6 +30,7 @@ public:
 
     // Other functions
     int save();
+    int save(const char* fileName);
     void clearData();
 
 private:
