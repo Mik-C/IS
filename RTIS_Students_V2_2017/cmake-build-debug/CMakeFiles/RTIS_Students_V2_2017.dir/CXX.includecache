@@ -177,6 +177,8 @@ shaders/intersectionshader.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/intersectionshader.h
 shaders/depthshader.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.h
+materials/phong.h
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.h
 
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.cpp
 material.h
@@ -187,6 +189,16 @@ iostream
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.h
 ../core/vector3d.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/vector3d.h
+
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp
+cmath
+-
+phong.h
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.h
+
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.h
+material.h
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.h
 
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.cpp
 depthshader.h

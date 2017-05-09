@@ -20,6 +20,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o"
   "CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o"
   "CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o"
+  "CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o"
   "RTIS_Students_V2_2017.pdb"
   "RTIS_Students_V2_2017"
 )

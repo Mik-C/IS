@@ -89,6 +89,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/lightsources/pointlightsource.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/main.cpp
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/intersectionshader.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/shader.h
@@ -98,6 +99,11 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/vector3d.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.cpp
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/vector3d.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/intersection.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/matrix4x4.h

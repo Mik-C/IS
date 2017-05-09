@@ -88,6 +88,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/core/vector3d.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/lightsources/pointlightsource.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/materials/material.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/materials/phong.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shaders/depthshader.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shaders/intersectionshader.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shaders/shader.h
@@ -97,6 +98,11 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shapes/sphere.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o: ../src/core/vector3d.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o: ../src/materials/material.cpp
 CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o: ../src/materials/material.h
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: ../src/core/vector3d.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: ../src/materials/material.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: ../src/materials/phong.cpp
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: ../src/materials/phong.h
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o: ../src/core/intersection.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o: ../src/core/matrix4x4.h

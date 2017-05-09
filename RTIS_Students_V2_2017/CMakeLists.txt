@@ -81,6 +81,6 @@ set(SOURCE_FILES
         VisualStudio2015/RTIS_V2/RTIS_V2.sln
         VisualStudio2015/RTIS_V2/RTIS_V2.VC.db
         VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj
-        VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj.filters)
+        VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj.filters src/materials/phong.cpp src/materials/phong.h)
 
 add_executable(RTIS_Students_V2_2017 ${SOURCE_FILES})

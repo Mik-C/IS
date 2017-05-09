@@ -280,6 +280,12 @@
 		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.h">
 			<Option target="RTIS_Students_V2_2017"/>
 		</Unit>
+		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp">
+			<Option target="RTIS_Students_V2_2017"/>
+		</Unit>
+		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.h">
+			<Option target="RTIS_Students_V2_2017"/>
+		</Unit>
 		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.cpp">
 			<Option target="RTIS_Students_V2_2017"/>
 		</Unit>

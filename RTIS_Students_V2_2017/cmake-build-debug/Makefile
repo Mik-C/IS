@@ -528,6 +528,33 @@ src/materials/material.cpp.s:
 	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.s
 .PHONY : src/materials/material.cpp.s
 
+src/materials/phong.o: src/materials/phong.cpp.o
+
+.PHONY : src/materials/phong.o
+
+# target to build an object file
+src/materials/phong.cpp.o:
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o
+.PHONY : src/materials/phong.cpp.o
+
+src/materials/phong.i: src/materials/phong.cpp.i
+
+.PHONY : src/materials/phong.i
+
+# target to preprocess a source file
+src/materials/phong.cpp.i:
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.i
+.PHONY : src/materials/phong.cpp.i
+
+src/materials/phong.s: src/materials/phong.cpp.s
+
+.PHONY : src/materials/phong.s
+
+# target to generate assembly for a file
+src/materials/phong.cpp.s:
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.s
+.PHONY : src/materials/phong.cpp.s
+
 src/shaders/depthshader.o: src/shaders/depthshader.cpp.o
 
 .PHONY : src/shaders/depthshader.o
@@ -744,6 +771,9 @@ help:
 	@echo "... src/materials/material.o"
 	@echo "... src/materials/material.i"
 	@echo "... src/materials/material.s"
+	@echo "... src/materials/phong.o"
+	@echo "... src/materials/phong.i"
+	@echo "... src/materials/phong.s"
 	@echo "... src/shaders/depthshader.o"
 	@echo "... src/shaders/depthshader.i"
 	@echo "... src/shaders/depthshader.s"
