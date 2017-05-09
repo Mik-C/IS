@@ -193,6 +193,8 @@ iostream
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp
 cmath
 -
+iostream
+-
 phong.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.h
 
@@ -203,14 +205,22 @@ material.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.cpp
 depthshader.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.h
-depthshader.h
-/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.h
 ../core/utils.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/utils.h
 cmath
 -
 
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.h
+shader.h
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/shader.h
+
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.cpp
+directshader.h
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.h
+../core/utils.h
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/utils.h
+
+/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.h
 shader.h
 /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/shader.h
 

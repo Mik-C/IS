@@ -3,17 +3,13 @@
 
 #include "phong.h"
 
-PhongMaterial::PhongMaterial() {
-    this->k_d = Vector3D(1,1,1);
-    this->k_s = Vector3D(1,1,1);
-    this->s = 1;
-}
+PhongMaterial::PhongMaterial() :
+        k_d(Vector3D(1,1,1)), k_s(Vector3D(1,1,1)), s(double(1))
+{}
 
-PhongMaterial::PhongMaterial(Vector3D k_d, Vector3D k_s, double s) {
-    this->k_d = k_d;
-    this->k_s = k_s;
-    this->s = s;
-}
+PhongMaterial::PhongMaterial(Vector3D k_d, Vector3D k_s, double s) :
+        k_d(k_d), k_s(k_s), s(s)
+{}
 
 PhongMaterial::~PhongMaterial() {}
 

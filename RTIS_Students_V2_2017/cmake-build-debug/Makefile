@@ -582,6 +582,33 @@ src/shaders/depthshader.cpp.s:
 	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.s
 .PHONY : src/shaders/depthshader.cpp.s
 
+src/shaders/directshader.o: src/shaders/directshader.cpp.o
+
+.PHONY : src/shaders/directshader.o
+
+# target to build an object file
+src/shaders/directshader.cpp.o:
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o
+.PHONY : src/shaders/directshader.cpp.o
+
+src/shaders/directshader.i: src/shaders/directshader.cpp.i
+
+.PHONY : src/shaders/directshader.i
+
+# target to preprocess a source file
+src/shaders/directshader.cpp.i:
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.i
+.PHONY : src/shaders/directshader.cpp.i
+
+src/shaders/directshader.s: src/shaders/directshader.cpp.s
+
+.PHONY : src/shaders/directshader.s
+
+# target to generate assembly for a file
+src/shaders/directshader.cpp.s:
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.s
+.PHONY : src/shaders/directshader.cpp.s
+
 src/shaders/intersectionshader.o: src/shaders/intersectionshader.cpp.o
 
 .PHONY : src/shaders/intersectionshader.o
@@ -777,6 +804,9 @@ help:
 	@echo "... src/shaders/depthshader.o"
 	@echo "... src/shaders/depthshader.i"
 	@echo "... src/shaders/depthshader.s"
+	@echo "... src/shaders/directshader.o"
+	@echo "... src/shaders/directshader.i"
+	@echo "... src/shaders/directshader.s"
 	@echo "... src/shaders/intersectionshader.o"
 	@echo "... src/shaders/intersectionshader.i"
 	@echo "... src/shaders/intersectionshader.s"

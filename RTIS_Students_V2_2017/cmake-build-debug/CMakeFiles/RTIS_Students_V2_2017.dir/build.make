@@ -393,9 +393,33 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o.provides: CMak
 CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o.provides.build: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o
 
 
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: ../src/materials/phong.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp > CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.i
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp -o CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.s
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires:
+
+.PHONY : CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides.build
+.PHONY : CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides.build: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o
+
+
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o: ../src/shaders/depthshader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.cpp
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.i: cmake_force
@@ -417,9 +441,33 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o.provides: CMa
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o.provides.build: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o
 
 
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shaders/directshader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.cpp
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.cpp > CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.i
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.cpp -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.s
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.requires:
+
+.PHONY : CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.requires
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.provides: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.requires
+	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.provides.build
+.PHONY : CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.provides
+
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.provides.build: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o
+
+
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o: ../src/shaders/intersectionshader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/intersectionshader.cpp
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.i: cmake_force
@@ -443,7 +491,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o.provid
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o: ../src/shaders/normalshader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/normalshader.cpp
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.i: cmake_force
@@ -467,7 +515,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o.provides.bui
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o: ../src/shaders/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/shader.cpp
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.i: cmake_force
@@ -491,7 +539,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o.provides.build: CM
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o: ../src/shapes/shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shapes/shape.cpp
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.i: cmake_force
@@ -515,7 +563,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o.provides.build: CMak
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o: ../src/shapes/sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shapes/sphere.cpp
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.i: cmake_force
@@ -539,7 +587,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o.provides.build: CMa
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/main.cpp
 
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.i: cmake_force
@@ -561,30 +609,6 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o.provides: CMakeFiles/RTIS_St
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o.provides.build: CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o
 
 
-CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: CMakeFiles/RTIS_Students_V2_2017.dir/flags.make
-CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o: ../src/materials/phong.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o -c /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp
-
-CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp > CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.i
-
-CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/phong.cpp -o CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.s
-
-CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires:
-
-.PHONY : CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires
-
-CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires
-	$(MAKE) -f CMakeFiles/RTIS_Students_V2_2017.dir/build.make CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides.build
-.PHONY : CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides
-
-CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.provides.build: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o
-
-
 # Object files for target RTIS_Students_V2_2017
 RTIS_Students_V2_2017_OBJECTS = \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/cameras/camera.cpp.o" \
@@ -601,14 +625,15 @@ RTIS_Students_V2_2017_OBJECTS = \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/core/vector3d.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/lightsources/pointlightsource.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o" \
+"CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o" \
+"CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o" \
 "CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o" \
-"CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o" \
-"CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o"
+"CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o"
 
 # External object files for target RTIS_Students_V2_2017
 RTIS_Students_V2_2017_EXTERNAL_OBJECTS = \
@@ -648,14 +673,15 @@ RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/core/utils.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/core/vector3d.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/lightsources/pointlightsource.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o
+RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o
+RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o
-RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o
 RTIS_Students_V2_2017: ../VisualStudio2015/RTIS_V2/x64/Debug/bitmap.obj
 RTIS_Students_V2_2017: ../VisualStudio2015/RTIS_V2/x64/Debug/camera.obj
 RTIS_Students_V2_2017: ../VisualStudio2015/RTIS_V2/x64/Debug/depthshader.obj
@@ -679,7 +705,7 @@ RTIS_Students_V2_2017: ../VisualStudio2015/RTIS_V2/x64/Debug/utils.obj
 RTIS_Students_V2_2017: ../VisualStudio2015/RTIS_V2/x64/Debug/vector3d.obj
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/build.make
 RTIS_Students_V2_2017: CMakeFiles/RTIS_Students_V2_2017.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable RTIS_Students_V2_2017"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable RTIS_Students_V2_2017"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RTIS_Students_V2_2017.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -701,14 +727,15 @@ CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/core/vector3d.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/lightsources/pointlightsource.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/material.cpp.o.requires
+CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o.requires
+CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/normalshader.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/shader.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/shape.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/shapes/sphere.cpp.o.requires
 CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o.requires
-CMakeFiles/RTIS_Students_V2_2017.dir/requires: CMakeFiles/RTIS_Students_V2_2017.dir/src/materials/phong.cpp.o.requires
 
 .PHONY : CMakeFiles/RTIS_Students_V2_2017.dir/requires
 

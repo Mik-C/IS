@@ -116,6 +116,18 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/shader.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shapes/shape.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/intersection.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/matrix4x4.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/ray.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/utils.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/vector3d.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/lightsources/pointlightsource.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/materials/material.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.cpp
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/shader.h
+ /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shapes/shape.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/intersection.h
  /Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/core/matrix4x4.h

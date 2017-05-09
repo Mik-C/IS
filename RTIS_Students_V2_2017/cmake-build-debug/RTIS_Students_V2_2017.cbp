@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/CMakeLists.txt">
+			<Option target="RTIS_Students_V2_2017"/>
+		</Unit>
 		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/VisualStudio2015/RTIS_V2/RTIS_V2.VC.db">
 			<Option target="RTIS_Students_V2_2017"/>
 		</Unit>
@@ -290,6 +293,12 @@
 			<Option target="RTIS_Students_V2_2017"/>
 		</Unit>
 		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/depthshader.h">
+			<Option target="RTIS_Students_V2_2017"/>
+		</Unit>
+		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.cpp">
+			<Option target="RTIS_Students_V2_2017"/>
+		</Unit>
+		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/directshader.h">
 			<Option target="RTIS_Students_V2_2017"/>
 		</Unit>
 		<Unit filename="/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/src/shaders/intersectionshader.cpp">

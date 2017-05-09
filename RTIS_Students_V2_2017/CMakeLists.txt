@@ -32,8 +32,12 @@ set(SOURCE_FILES
         src/lightsources/pointlightsource.h
         src/materials/material.cpp
         src/materials/material.h
+        src/materials/phong.cpp
+        src/materials/phong.h
         src/shaders/depthshader.cpp
         src/shaders/depthshader.h
+        src/shaders/directshader.cpp
+        src/shaders/directshader.h
         src/shaders/intersectionshader.cpp
         src/shaders/intersectionshader.h
         src/shaders/normalshader.cpp
@@ -81,6 +85,7 @@ set(SOURCE_FILES
         VisualStudio2015/RTIS_V2/RTIS_V2.sln
         VisualStudio2015/RTIS_V2/RTIS_V2.VC.db
         VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj
-        VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj.filters src/materials/phong.cpp src/materials/phong.h)
+        VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj.filters
+        CMakeLists.txt)
 
 add_executable(RTIS_Students_V2_2017 ${SOURCE_FILES})

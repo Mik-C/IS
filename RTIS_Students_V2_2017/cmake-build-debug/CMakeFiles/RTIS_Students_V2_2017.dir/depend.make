@@ -116,6 +116,18 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o: ../src/shade
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o: ../src/shaders/shader.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/depthshader.cpp.o: ../src/shapes/shape.h
 
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/core/intersection.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/core/matrix4x4.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/core/ray.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/core/utils.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/core/vector3d.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/lightsources/pointlightsource.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/materials/material.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shaders/directshader.cpp
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shaders/directshader.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shaders/shader.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shapes/shape.h
+
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o: ../src/core/intersection.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o: ../src/core/matrix4x4.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/intersectionshader.cpp.o: ../src/core/ray.h

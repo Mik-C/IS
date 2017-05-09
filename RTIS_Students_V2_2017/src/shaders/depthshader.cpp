@@ -1,5 +1,4 @@
 #include "depthshader.h"
-#include "depthshader.h"
 #include "../core/utils.h"
 #include <cmath>
 
@@ -19,6 +18,9 @@ Vector3D DepthShader::computeColor(const Ray &r, const std::vector<Shape*> &objL
 	else
 	{
 		double depth = sqrt(pow(its->itsPoint.x - r.o.x, 2) + pow(its->itsPoint.y - r.o.y, 2) + pow(its->itsPoint.z - r.o.z, 2));
-		if ( (depth) >= maxDist )			return bgColor;		else 			return color * (1.0 - depth / maxDist);
+		if ( (depth) >= maxDist )
+			return bgColor;
+		else 
+			return color * (1.0 - depth / maxDist);
 	}
 }
