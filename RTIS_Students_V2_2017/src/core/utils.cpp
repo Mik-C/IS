@@ -33,7 +33,7 @@ bool Utils::hasIntersection(const Ray &ray, const std::vector<Shape*> &objectsLi
 bool Utils::getClosestIntersection(const Ray &cameraRay, const std::vector<Shape*> &objectsList, Intersection &its)
 {
     //
-    // Write your code bellow
+    // Write your code beleow
     //
     for(size_t objIndex = 0; objIndex < objectsList.size(); objIndex ++)
 	{

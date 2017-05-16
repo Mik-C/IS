@@ -15,6 +15,7 @@
 
 #include "shaders/intersectionshader.h"
 #include "shaders/depthshader.h"
+#include "shaders/directshader.h"
 
 #include "materials/phong.h"
 
@@ -33,13 +34,16 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     double fovRadians = Utils::degreesToRadians(fovDegrees);
     cam = new PerspectiveCamera(cameraToWorld, fovRadians, *film);
 
+
     /* ************************** */
     /* DEFINE YOUR MATERIALS HERE */
     /* ************************** */
     // (...)
     //  EXAMPLE:  Material *green_50 = new Phong (Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
-    Material *mat = new PhongMaterial(Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
-
+	// Specular, Diffuse & Shineness coefficient
+    Material *green_50 = new PhongMaterial(Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
+	Material *red_10 = new PhongMaterial(Vector3D(1, 0.0, 0.0), Vector3D(0.9, 0.1, 0.0), 10);
+	Material *blue_20 = new PhongMaterial(Vector3D(0.0, 0.0, 0.1), Vector3D(0.0, 0.2, 0.9), 20);
 
     /* ******* */
     /* Objects */
@@ -51,17 +55,17 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     // Define and place a sphere
     Matrix4x4 sphereTransform1;
     sphereTransform1 = sphereTransform1.translate(Vector3D(-1.0, -0.5, 2*std::sqrt(2.0)));
-    Shape *s1 = new Sphere (0.25, sphereTransform1, mat);
+    Shape *s1 = new Sphere (0.25, sphereTransform1, green_50);
 
     // Define and place a sphere
     Matrix4x4 sphereTransform2;
     sphereTransform2 = sphereTransform2.translate(Vector3D(1.0, 0.0, 6));
-    Shape *s2 = new Sphere (1, sphereTransform2, mat);
+    Shape *s2 = new Sphere (1, sphereTransform2, red_10);
 
     // Define and place a sphere
     Matrix4x4 sphereTransform3;
     sphereTransform3 = sphereTransform3.translate(Vector3D(0.3, -0.75, 3.5));
-    Shape *s3 = new Sphere (0.25, sphereTransform3, mat);
+    Shape *s3 = new Sphere (0.25, sphereTransform3, blue_20);
 
     // Store the objects in the object list
     objectsList->push_back(s1);
@@ -72,13 +76,16 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     /* ****** */
     /* Lights */
     /* ****** */
-    //
     // ADD YOUR LIGHT SOURCES HERE
     // (...)
-    //
-    // DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
-    // (...)
-    //
+	lightSourceList = new std::vector<PointLightSource>;
+	PointLightSource l1 = PointLightSource((5.0, 0.0, 0.0), (0.0, 0.5, 1.0));
+	PointLightSource l2 = PointLightSource((0.0, 0.0, 8.0), (0.2, 0.2, 0.3));
+	// DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
+	// (...)
+	lightSourceList->push_back(l1);
+	lightSourceList->push_back(l2);
+
 }
 
 void raytrace(Camera* &cam, Shader* &shader, Film* &film,
@@ -131,7 +138,9 @@ int main()
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
     Vector3D intersectionColor(1,0,0);
     //Shader *shader = new IntersectionShader (intersectionColor, bgColor);
-	Shader *shader = new DepthShader(Vector3D(0.4, 1, 0.4), 8, bgColor);
+	//Shader *shader = new DepthShader(Vector3D(0.4, 1, 0.4), 8, bgColor);
+	//Directshader::Directshader(double maxDist_, Vector3D bgColor_) : Shader(bgColor_), maxDist(maxDist_)
+	Shader *shader = new Directshader(10000, bgColor);
 
     // Declare pointers to all the variables which describe the scene
     Camera *cam;
