@@ -139,8 +139,7 @@ int main()
     Vector3D intersectionColor(1,0,0);
     //Shader *shader = new IntersectionShader (intersectionColor, bgColor);
 	//Shader *shader = new DepthShader(Vector3D(0.4, 1, 0.4), 8, bgColor);
-	//Directshader::Directshader(double maxDist_, Vector3D bgColor_) : Shader(bgColor_), maxDist(maxDist_)
-	Shader *shader = new Directshader(10000, bgColor);
+	Shader *shader = new Directshader(8, bgColor);
 
     // Declare pointers to all the variables which describe the scene
     Camera *cam;

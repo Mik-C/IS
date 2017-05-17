@@ -43,7 +43,7 @@ bool Utils::getClosestIntersection(const Ray &cameraRay, const std::vector<Shape
 			return true;
 	}
     //
-    return false;
+	return false;
 }
 
 double interpolate(double val, double y0, double x0, double y1, double x1 )

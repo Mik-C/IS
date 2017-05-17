@@ -4,7 +4,8 @@
 
 #include "shader.h"
 
-class Directshader : public Shader{
+class Directshader : public Shader
+{
 public:
     Directshader();
     Directshader(double maxDist_, Vector3D bgColor_);
