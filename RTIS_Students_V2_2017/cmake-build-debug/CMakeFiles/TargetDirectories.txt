@@ -1,3 +1,0 @@
-/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/miquel/Desktop/IS/RTIS_Students_V2_2017/cmake-build-debug/CMakeFiles/RTIS_Students_V2_2017.dir
