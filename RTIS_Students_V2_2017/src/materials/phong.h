@@ -24,7 +24,7 @@ public:
 
     void setDiffuse(Vector3D k);
     void setSpecular(Vector3D k);
-    void sedShininess(double s);
+    void setShininess(double s);
 };
 
 

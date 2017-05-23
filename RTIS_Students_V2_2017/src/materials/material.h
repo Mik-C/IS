@@ -3,8 +3,7 @@
 
 #include "../core/vector3d.h"
 
-class Material
-{
+class Material {
 public:
     Material();
 

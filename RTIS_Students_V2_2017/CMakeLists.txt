@@ -48,6 +48,8 @@ set(SOURCE_FILES
         src/shapes/shape.h
         src/shapes/sphere.cpp
         src/shapes/sphere.h
+        src/shapes/infiniteplane.cpp
+        src/shapes/infiniteplane.h
         src/main.cpp
         VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/CL.command.1.tlog
         VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/CL.read.1.tlog

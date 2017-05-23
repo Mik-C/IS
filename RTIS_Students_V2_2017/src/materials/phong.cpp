@@ -41,4 +41,4 @@ double Phong::getIndexOfRefraction() const {
 
 void Phong::setDiffuse(Vector3D k) {this->k_d = k;}
 void Phong::setSpecular(Vector3D k) {this->k_s = k;}
-void Phong::sedShininess(double s) {this->s = s;}
+void Phong::setShininess(double s) {this->s = s;}

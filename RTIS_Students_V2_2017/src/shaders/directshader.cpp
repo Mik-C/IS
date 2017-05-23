@@ -20,21 +20,22 @@ Vector3D Directshader::computeColor(const Ray &r, const std::vector<Shape *> &ob
 	if (!Utils::getClosestIntersection(r, objList, *its))
 		return bgColor;
 
-	Vector3D color(0.0, 0.0, 0.0);
+	Vector3D color = Vector3D(0,0,0);
 	for(PointLightSource const &ls : lsList)
 	{
-		Vector3D wi = (its->itsPoint - ls.getPosition()).normalized();
-		Ray lray = Ray(ls.getPosition(), wi);
-		Intersection *lits = new Intersection();
-		if(!Utils::getClosestIntersection(lray, objList, *lits))
-			continue;
-		if((lits->itsPoint - its->itsPoint).length() > 0.1)
+		Vector3D wi = (ls.getPosition() - its->itsPoint);
+		double distance = wi.length();
+		wi = wi.normalized();
+		Ray lray = Ray(its->itsPoint, wi);
+		lray.maxT = distance;
+		if(Utils::hasIntersection(lray, objList))
 			continue;
 
 		Vector3D Lp = ls.getIntensity(its->itsPoint);
 		Vector3D wo = (-r.d).normalized();
-		Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wi, wo);
-		color = color + Vector3D(Lp.x * r.x, Lp.y * r.y, Lp.z * r.z);
+		Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wo, wi);
+		std::cout << r << "\n";
+		color += Utils::multiplyPerCanal(Lp, r);
 	}
 	return color;
 		

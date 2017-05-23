@@ -9,6 +9,7 @@
 #include "core/utils.h"
 
 #include "shapes/sphere.h"
+#include "shapes/infiniteplane.h"
 
 #include "cameras/ortographic.h"
 #include "cameras/perspective.h"
@@ -43,6 +44,7 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     Material *green_50 = new Phong(Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
 	Material *red_10 = new Phong(Vector3D(1, 0.0, 0.1), Vector3D(0.2, 0.6, 0.2), 10);
 	Material *blue_20 = new Phong(Vector3D(0.0, 0.1, 0.6), Vector3D(0.2, 0.6, 0.2), 20);
+    Material *white = new Phong(Vector3D(0.9,0.9,0.9), Vector3D(0.5,0.5,0.5), 5);
 
     /* ******* */
     /* Objects */
@@ -56,32 +58,32 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     sphereTransform1 = sphereTransform1.translate(Vector3D(-1.0, -0.5, 2*std::sqrt(2.0)));
     Shape *s1 = new Sphere (0.25, sphereTransform1, green_50);
 
-    // Define and place a sphere
     Matrix4x4 sphereTransform2;
     sphereTransform2 = sphereTransform2.translate(Vector3D(1.0, 0.0, 6));
     Shape *s2 = new Sphere (1, sphereTransform2, red_10);
 
-    // Define and place a sphere
     Matrix4x4 sphereTransform3;
     sphereTransform3 = sphereTransform3.translate(Vector3D(0.3, -0.75, 3.5));
     Shape *s3 = new Sphere (0.25, sphereTransform3, blue_20);
+
+    //Planes
+    Shape *ip1 = new InfinitePlane(Vector3D(0,0,0), Vector3D(-1,1,0), white);
 
     // Store the objects in the object list
     objectsList->push_back(s1);
     objectsList->push_back(s2);
     objectsList->push_back(s3);
-
+    //objectsList->push_back(ip1);
+    std::cout << objectsList->size() << "\n";
 
     /* ****** */
     /* Lights */
     /* ****** */
     // ADD YOUR LIGHT SOURCES HERE
-    // (...)
 	lightSourceList = new std::vector<PointLightSource>;
-	PointLightSource l1 = PointLightSource((15.0, 0.0, 0.0), (20.0, 20.0, 20.0));
-	PointLightSource l2 = PointLightSource((0.0, 10.0, -10.0), (20.0, 20.0, 20.0));
+	PointLightSource l1 = PointLightSource(Vector3D(10.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
+	PointLightSource l2 = PointLightSource(Vector3D(-10.0, 10.0, 10.0), Vector3D(200.0, 200.0, 200.0));
 	// DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
-	// (...)
 	lightSourceList->push_back(l1);
 	lightSourceList->push_back(l2);
 
