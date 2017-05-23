@@ -15,21 +15,26 @@ Directshader::~Directshader() {}
 
 Vector3D Directshader::computeColor(const Ray &r, const std::vector<Shape *> &objList,
                                     const std::vector<PointLightSource> &lsList) const {
-	//std::cout << "1!" << std::endl;
-	
+
 	Intersection *its = new Intersection();
 	if (!Utils::getClosestIntersection(r, objList, *its))
 		return bgColor;
-		
-	Vector3D color(0.4, 1, 0.4);
-	for (size_t lsIndex = 0; lsIndex < lsList.size(); lsIndex++)
+
+	Vector3D color(0.0, 0.0, 0.0);
+	for(PointLightSource const &ls : lsList)
 	{
-		Vector3D intensityLP = lsList.at(lsIndex).getIntensity(its->itsPoint);
-		Vector3D wi = lsList.at(lsIndex).getPosition() - its->itsPoint;
-		wi.normalized();
-		Vector3D wo = (0, 0, -1);
-		Vector3D reflectance = its->shape->getMaterial().getReflectance(its->normal, wi, wo);
-		color = color + dot(intensityLP, reflectance);
+		Vector3D wi = (its->itsPoint - ls.getPosition()).normalized();
+		Ray lray = Ray(ls.getPosition(), wi);
+		Intersection *lits = new Intersection();
+		if(!Utils::getClosestIntersection(lray, objList, *lits))
+			continue;
+		if((lits->itsPoint - its->itsPoint).length() > 0.1)
+			continue;
+
+		Vector3D Lp = ls.getIntensity(its->itsPoint);
+		Vector3D wo = (-r.d).normalized();
+		Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wi, wo);
+		color = color + Vector3D(Lp.x * r.x, Lp.y * r.y, Lp.z * r.z);
 	}
 	return color;
 		

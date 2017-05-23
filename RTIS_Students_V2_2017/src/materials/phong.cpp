@@ -3,42 +3,42 @@
 
 #include "phong.h"
 
-PhongMaterial::PhongMaterial() :
+Phong::Phong() :
         k_d(Vector3D(1,1,1)), k_s(Vector3D(1,1,1)), s(double(1))
 {}
 
-PhongMaterial::PhongMaterial(Vector3D k_d, Vector3D k_s, double s) :
+Phong::Phong(Vector3D k_d, Vector3D k_s, double s) :
         k_d(k_d), k_s(k_s), s(s)
 {}
 
-PhongMaterial::~PhongMaterial() {}
+Phong::~Phong() {}
 
-Vector3D PhongMaterial::getReflectance(const Vector3D &n, const Vector3D &wo, const Vector3D &wi) const {
+Vector3D Phong::getReflectance(const Vector3D &n, const Vector3D &wo, const Vector3D &wi) const {
     Vector3D r_d = k_d * (dot(wi, n));
-    Vector3D wr = (n * dot(n, wi)) * 2 - wi;
+    Vector3D wr = (((n * dot(n, wi)) * 2) - wi).normalized();
     Vector3D r_s = k_s * (pow(dot(wo, wr), s));
 
     return r_d + r_s;
 }
 
-bool PhongMaterial::hasSpecular() const {
+bool Phong::hasSpecular() const {
     return true;
 }
 
-bool PhongMaterial::hasTransmission() const {
+bool Phong::hasTransmission() const {
     return false;
 }
 
-bool PhongMaterial::hasDiffuseOrGlossy() const {
+bool Phong::hasDiffuseOrGlossy() const {
     return true;
 }
 
-double PhongMaterial::getIndexOfRefraction() const {
+double Phong::getIndexOfRefraction() const {
     std::cout << "Warning! Calling \"Material::getIndexOfRefraction()\" for a non-transmissive material"
               << std::endl;
     return -1;
 }
 
-void PhongMaterial::setDiffuse(Vector3D k) {this->k_d = k;}
-void PhongMaterial::setSpecular(Vector3D k) {this->k_s = k;}
-void PhongMaterial::sedShininess(double s) {this->s = s;}
+void Phong::setDiffuse(Vector3D k) {this->k_d = k;}
+void Phong::setSpecular(Vector3D k) {this->k_s = k;}
+void Phong::sedShininess(double s) {this->s = s;}

@@ -90,6 +90,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/materials/material.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/materials/phong.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shaders/depthshader.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shaders/directshader.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shaders/intersectionshader.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shaders/shader.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/main.cpp.o: ../src/shapes/shape.h
@@ -123,6 +124,7 @@ CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/core
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/core/vector3d.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/lightsources/pointlightsource.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/materials/material.h
+CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/materials/phong.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shaders/directshader.cpp
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shaders/directshader.h
 CMakeFiles/RTIS_Students_V2_2017.dir/src/shaders/directshader.cpp.o: ../src/shaders/shader.h

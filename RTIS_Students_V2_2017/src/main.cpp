@@ -34,16 +34,15 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     double fovRadians = Utils::degreesToRadians(fovDegrees);
     cam = new PerspectiveCamera(cameraToWorld, fovRadians, *film);
 
-
     /* ************************** */
     /* DEFINE YOUR MATERIALS HERE */
     /* ************************** */
     // (...)
     //  EXAMPLE:  Material *green_50 = new Phong (Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
 	// Specular, Diffuse & Shineness coefficient
-    Material *green_50 = new PhongMaterial(Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
-	Material *red_10 = new PhongMaterial(Vector3D(1, 0.0, 0.0), Vector3D(0.9, 0.1, 0.0), 10);
-	Material *blue_20 = new PhongMaterial(Vector3D(0.0, 0.0, 0.1), Vector3D(0.0, 0.2, 0.9), 20);
+    Material *green_50 = new Phong(Vector3D(0.2, 0.7, 0.3), Vector3D(0.2, 0.6, 0.2), 50);
+	Material *red_10 = new Phong(Vector3D(1, 0.0, 0.1), Vector3D(0.2, 0.6, 0.2), 10);
+	Material *blue_20 = new Phong(Vector3D(0.0, 0.1, 0.6), Vector3D(0.2, 0.6, 0.2), 20);
 
     /* ******* */
     /* Objects */
@@ -79,8 +78,8 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     // ADD YOUR LIGHT SOURCES HERE
     // (...)
 	lightSourceList = new std::vector<PointLightSource>;
-	PointLightSource l1 = PointLightSource((5.0, 0.0, 0.0), (0.0, 0.5, 1.0));
-	PointLightSource l2 = PointLightSource((0.0, 0.0, 8.0), (0.2, 0.2, 0.3));
+	PointLightSource l1 = PointLightSource((15.0, 0.0, 0.0), (20.0, 20.0, 20.0));
+	PointLightSource l2 = PointLightSource((0.0, 10.0, -10.0), (20.0, 20.0, 20.0));
 	// DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
 	// (...)
 	lightSourceList->push_back(l1);
