@@ -22,13 +22,14 @@ bool InfinitePlane::rayIntersectP(const Ray &rayWorld) const
         return false;
 
     // Effectivelly compute the intersection point
-    double tHit = dot((p0World - rayWorld.o).normalized(), nWorld);
+    double tHit = dot((p0World - rayWorld.o).normalized(), nWorld) / denominator;
 
     // Is tHit outside the bounds of the ray segment we want to test intersecion with?
     if (tHit < rayWorld.minT || tHit > rayWorld.maxT)
         return false;
 
     // Arriving here, we know that the ray segment intersects the plan
+    rayWorld.maxT = tHit;
     return true;
 }
 
@@ -42,7 +43,7 @@ bool InfinitePlane::rayIntersect(const Ray &rayWorld, Intersection &its) const
         return false;
 
     // Effectivelly compute the intersection distance
-    double tHit = dot((p0World - rayWorld.o).normalized(), nWorld);
+    double tHit = dot((p0World - rayWorld.o), nWorld) / denominator;
 
     // Is tHit outside the bounds of the ray segment we want to test intersecion with?
     if (tHit < rayWorld.minT || tHit > rayWorld.maxT)
@@ -53,7 +54,10 @@ bool InfinitePlane::rayIntersect(const Ray &rayWorld, Intersection &its) const
 
     // Fill the intersection details
     its.itsPoint = itsPoint;
-    its.normal = nWorld;
+    if(denominator < 0)
+        its.normal = nWorld;
+    else
+        its.normal = -nWorld;
     its.shape = this;
 
     // Update the ray maxT

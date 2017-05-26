@@ -15,6 +15,7 @@
 #include "cameras/perspective.h"
 
 #include "shaders/intersectionshader.h"
+#include "shaders/normalshader.h"
 #include "shaders/depthshader.h"
 #include "shaders/directshader.h"
 
@@ -67,13 +68,13 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     Shape *s3 = new Sphere (0.25, sphereTransform3, blue_20);
 
     //Planes
-    Shape *ip1 = new InfinitePlane(Vector3D(0,0,0), Vector3D(-1,1,0), white);
+    Shape *ip1 = new InfinitePlane(Vector3D(0,0,20), Vector3D(0,0,-1), white);
 
     // Store the objects in the object list
     objectsList->push_back(s1);
     objectsList->push_back(s2);
     objectsList->push_back(s3);
-    //objectsList->push_back(ip1);
+    objectsList->push_back(ip1);
     std::cout << objectsList->size() << "\n";
 
     /* ****** */
@@ -82,10 +83,12 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     // ADD YOUR LIGHT SOURCES HERE
 	lightSourceList = new std::vector<PointLightSource>;
 	PointLightSource l1 = PointLightSource(Vector3D(10.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
-	PointLightSource l2 = PointLightSource(Vector3D(-10.0, 10.0, 10.0), Vector3D(200.0, 200.0, 200.0));
+	PointLightSource l2 = PointLightSource(Vector3D(0.0, 10.0, 10.0), Vector3D(100.0, 100.0, 100.0));
+    PointLightSource l3 = PointLightSource(Vector3D(0.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
 	// DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
-	lightSourceList->push_back(l1);
-	lightSourceList->push_back(l2);
+	//lightSourceList->push_back(l1);
+	//lightSourceList->push_back(l2);
+    lightSourceList->push_back(l3);
 
 }
 
@@ -111,6 +114,11 @@ void raytrace(Camera* &cam, Shader* &shader, Film* &film,
             // Compute the pixel position in NDC
             double x = (double)(col + 0.5) / resX;
             double y = (double)(lin + 0.5) / resY;
+
+            if(x < 0.55 || x > 0.6 || y < 0.62 || y > 0.64)
+                continue;
+
+            std::cout << "\n" << lin << " " << col << "\n";
 
             // Generate the camera ray
             Ray cameraRay = cam->generateRay(x, y);
@@ -139,7 +147,8 @@ int main()
     Vector3D bgColor(0.0, 0.0, 0.0); // Background color (for rays which do not intersect anything)
     Vector3D intersectionColor(1,0,0);
     //Shader *shader = new IntersectionShader (intersectionColor, bgColor);
-	//Shader *shader = new DepthShader(Vector3D(0.4, 1, 0.4), 8, bgColor);
+	//Shader *shader = new NormalShader(bgColor);
+    //Shader *shader = new DepthShader(Vector3D(0.4, 1, 0.4), 40, bgColor);
 	Shader *shader = new Directshader(8, bgColor);
 
     // Declare pointers to all the variables which describe the scene
