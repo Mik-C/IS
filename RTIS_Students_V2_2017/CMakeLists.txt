@@ -34,6 +34,8 @@ set(SOURCE_FILES
         src/lightsources/pointlightsource.h
         src/materials/material.cpp
         src/materials/material.h
+        src/materials/mirror.cpp
+        src/materials/mirror.h
         src/materials/phong.cpp
         src/materials/phong.h
         src/shaders/depthshader.cpp

@@ -6,11 +6,11 @@
 #include "material.h"
 
 class Mirror : public Material {
-	Vector3D k_s; //specular
+	Vector3D stuff;
 
 public:
 	Mirror();
-	Mirror(Vector3D k_s);
+	Mirror(Vector3D stuff);
 	~Mirror();
 
 	Vector3D getReflectance(const Vector3D &n, const Vector3D &wo, const Vector3D &wi) const;
@@ -19,7 +19,7 @@ public:
 	bool hasDiffuseOrGlossy() const;
 	double getIndexOfRefraction() const;
 
-	void setSpecular(Vector3D k);
+	Vector3D getStuff();
 };
 
 

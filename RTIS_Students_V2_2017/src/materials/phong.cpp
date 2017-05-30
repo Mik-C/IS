@@ -26,7 +26,7 @@ Vector3D Phong::getDiffuseCoefficient() const {
 }
 
 bool Phong::hasSpecular() const {
-    return true;
+    return false;
 }
 
 bool Phong::hasTransmission() const {
