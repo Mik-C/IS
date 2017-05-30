@@ -5,17 +5,17 @@
 #include "../core/utils.h"
 
 Mirror::Mirror() :
-	 stuff(Vector3D(1, 1, 1))
+	 foo(Vector3D(1, 1, 1))
 {}
 
-Mirror::Mirror( Vector3D stuff) :
-	 stuff(stuff)
+Mirror::Mirror( Vector3D foo) :
+	 foo(foo)
 {}
 
 Mirror::~Mirror() {}
 
 Vector3D Mirror::getReflectance(const Vector3D &n, const Vector3D &wo, const Vector3D &wi) const {
-	return stuff;
+	return Vector3D(0,0,0);
 }
 
 bool Mirror::hasSpecular() const {

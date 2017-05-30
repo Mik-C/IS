@@ -6,11 +6,11 @@
 #include "material.h"
 
 class Mirror : public Material {
-	Vector3D stuff;
+	Vector3D foo;
 
 public:
 	Mirror();
-	Mirror(Vector3D stuff);
+	Mirror(Vector3D foo);
 	~Mirror();
 
 	Vector3D getReflectance(const Vector3D &n, const Vector3D &wo, const Vector3D &wi) const;

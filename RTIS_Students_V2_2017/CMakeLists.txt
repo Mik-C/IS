@@ -38,6 +38,8 @@ set(SOURCE_FILES
         src/materials/mirror.h
         src/materials/phong.cpp
         src/materials/phong.h
+        src/materials/transmissive.cpp
+        src/materials/transmissive.h
         src/shaders/depthshader.cpp
         src/shaders/depthshader.h
         src/shaders/directshader.cpp
@@ -57,6 +59,6 @@ set(SOURCE_FILES
         src/shapes/infiniteplane.cpp
         src/shapes/infiniteplane.h
         src/main.cpp
-        CMakeLists.txt)
+        CMakeLists.txt src/materials/transmissive.cpp src/materials/transmissive.h)
 
 add_executable(RTIS_Students_V2_2017 ${SOURCE_FILES})
