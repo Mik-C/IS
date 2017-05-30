@@ -19,7 +19,7 @@ public:
 	bool hasDiffuseOrGlossy() const;
 	double getIndexOfRefraction() const;
 
-	Vector3D getStuff();
+	Vector3D getDiffuseCoefficient();
 };
 
 

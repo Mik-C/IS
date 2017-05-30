@@ -14,11 +14,11 @@ DirectShader::~DirectShader() {}
 
 Vector3D DirectShader::computeColor(const Ray &ray, const std::vector<Shape *> &objList,
                                     const std::vector<PointLightSource> &lsList) const {
-	Intersection *its = new Intersection();
 
 	if(ray.depth > 10000)
 		return Vector3D(0,0,0);
 
+    Intersection *its = new Intersection();
 	if (!Utils::getClosestIntersection(ray, objList, *its))
 		return bgColor;
 

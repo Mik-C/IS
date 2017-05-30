@@ -35,3 +35,7 @@ double Mirror::getIndexOfRefraction() const {
 		<< std::endl;
 	return -1;
 }
+
+Vector3D Mirror::getDiffuseCoefficient() {
+	return foo;
+}
