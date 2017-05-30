@@ -163,7 +163,6 @@
     <ClCompile Include="..\..\src\shaders\intersectionshader.cpp" />
     <ClCompile Include="..\..\src\shaders\normalshader.cpp" />
     <ClCompile Include="..\..\src\shaders\shader.cpp" />
-    <ClCompile Include="..\..\src\shapes\infiniteplane.cpp" />
     <ClCompile Include="..\..\src\shapes\shape.cpp" />
     <ClCompile Include="..\..\src\shapes\sphere.cpp" />
   </ItemGroup>
@@ -188,10 +187,8 @@
     <ClInclude Include="..\..\src\shaders\intersectionshader.h" />
     <ClInclude Include="..\..\src\shaders\normalshader.h" />
     <ClInclude Include="..\..\src\shaders\shader.h" />
-    <ClInclude Include="..\..\src\shapes\infiniteplane.h" />
     <ClInclude Include="..\..\src\shapes\shape.h" />
     <ClInclude Include="..\..\src\shapes\sphere.h" />
-    <ClInclude Include="mirror.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,12 +10,10 @@ Ray::Ray(const Vector3D &ori, const Vector3D &dir, size_t dep, double start,
 
 std::string Ray::toString() const
 {
-	
     std::ostringstream out;
     out << "origin: " << o << std::endl;
     out << "direction: " << d << std::endl;
     out << "minT = " << minT << ", maxT = " << maxT << std::endl;
-	
     return out.str();
 }
 
