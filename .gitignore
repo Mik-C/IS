@@ -1,3 +1,9 @@
+.idea
+VisualStudio*
+!*.sln
+!*.vcxproj
+cmake-build-debug
+
 # Compiled source #
 ###################
 *.com
