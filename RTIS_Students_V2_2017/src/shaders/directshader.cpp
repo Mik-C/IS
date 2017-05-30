@@ -3,11 +3,11 @@
 #include "../core/utils.h"
 
 DirectShader::DirectShader() :
-        Shader(Vector3D(0,0,0)), maxDist(100000)
+        Shader(Vector3D(0,0,0))
 {}
 
-DirectShader::DirectShader(double maxDist_, Vector3D bgColor_) :
-        Shader(bgColor_), maxDist(maxDist_)
+DirectShader::DirectShader(Vector3D bgColor_) :
+        Shader(bgColor_)
 {}
 
 DirectShader::~DirectShader() {}

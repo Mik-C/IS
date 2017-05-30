@@ -8,7 +8,7 @@ class DirectShader : public Shader
 {
 public:
     DirectShader();
-    DirectShader(double maxDist_, Vector3D bgColor_);
+    DirectShader(Vector3D bgColor_);
     ~DirectShader();
 
     virtual Vector3D computeColor(const Ray &r,
@@ -16,7 +16,6 @@ public:
                                   const std::vector<PointLightSource> &lsList) const;
 
 private:
-    double maxDist; // Used to store the value of the maximum distance which can be visualized
 };
 
 

@@ -18,6 +18,7 @@
 #include "shaders/normalshader.h"
 #include "shaders/depthshader.h"
 #include "shaders/directshader.h"
+#include "shaders/globalshader.h"
 
 #include "materials/phong.h"
 
@@ -218,7 +219,8 @@ int main()
     //Shader *shader = new IntersectionShader (intersectionColor, bgColor);
 	//Shader *shader = new NormalShader(bgColor);
     //Shader *shader = new DepthShader(Vector3D(0.4, 1, 0.4), 40, bgColor);
-	Shader *shader = new Directshader(8, bgColor);
+	//Shader *shader = new DirectShader(bgColor);
+    Shader *shader = new GlobalShader(bgColor, Vector3D(0.2,0.2,0.2));
 
     // Declare pointers to all the variables which describe the scene
     Camera *cam;
@@ -226,8 +228,8 @@ int main()
     std::vector<PointLightSource> *lightSourceList;
 
     // Build the scene
-    buildSceneSphere(cam, film, objectsList, lightSourceList);
-    //buildSceneCornellBox(cam, film, objectsList, lightSourceList);
+    //buildSceneSphere(cam, film, objectsList, lightSourceList);
+    buildSceneCornellBox(cam, film, objectsList, lightSourceList);
 
     // Launch some rays!
     raytrace(cam, shader, film, objectsList, lightSourceList);

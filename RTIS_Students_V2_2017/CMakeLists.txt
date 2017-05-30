@@ -16,6 +16,8 @@ set(SOURCE_FILES
         src/core/eqsolver.h
         src/core/film.cpp
         src/core/film.h
+        src/core/hemisphericalsampler.cpp
+        src/core/hemisphericalsampler.h
         src/core/intersection.cpp
         src/core/intersection.h
         src/core/matrix4x4.cpp
@@ -38,6 +40,8 @@ set(SOURCE_FILES
         src/shaders/depthshader.h
         src/shaders/directshader.cpp
         src/shaders/directshader.h
+        src/shaders/globalshader.cpp
+        src/shaders/globalshader.h
         src/shaders/intersectionshader.cpp
         src/shaders/intersectionshader.h
         src/shaders/normalshader.cpp

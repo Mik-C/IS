@@ -21,6 +21,7 @@ public:
     bool hasTransmission() const;
     bool hasDiffuseOrGlossy() const;
     double getIndexOfRefraction() const;
+    Vector3D getDiffuseCoefficient() const;
 
     void setDiffuse(Vector3D k);
     void setSpecular(Vector3D k);
