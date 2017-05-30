@@ -84,7 +84,7 @@ void buildSceneSphere(Camera* &cam, Film* &film,
 	lightSourceList = new std::vector<PointLightSource>;
 	PointLightSource l1 = PointLightSource(Vector3D(10.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
 	PointLightSource l2 = PointLightSource(Vector3D(0.0, 10.0, 10.0), Vector3D(100.0, 100.0, 100.0));
-    PointLightSource l3 = PointLightSource(Vector3D(0.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
+    PointLightSource l3 = PointLightSource(Vector3D(-6.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
 	// DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
 	lightSourceList->push_back(l1);
 	lightSourceList->push_back(l2);
@@ -188,11 +188,6 @@ void raytrace(Camera* &cam, Shader* &shader, Film* &film,
             // Compute the pixel position in NDC
             double x = (double)(col + 0.5) / resX;
             double y = (double)(lin + 0.5) / resY;
-
-           // if(x < 0.55 || x > 0.6 || y < 0.62 || y > 0.64)
-             //   continue;
-
-           // std::cout << "\n" << lin << " " << col << "\n";
 
             // Generate the camera ray
             Ray cameraRay = cam->generateRay(x, y);

@@ -16,8 +16,6 @@ Vector3D Utils::multiplyPerCanal(const Vector3D &v1, const Vector3D &v2)
 bool Utils::hasIntersection(const Ray &ray, const std::vector<Shape*> &objectsList)
 {
     // Write your code bellow
-    // (...)
-    //
     // For each object on the scene...
     for(size_t objIndex = 0; objIndex < objectsList.size(); objIndex ++)
     {
@@ -32,18 +30,14 @@ bool Utils::hasIntersection(const Ray &ray, const std::vector<Shape*> &objectsLi
 
 bool Utils::getClosestIntersection(const Ray &cameraRay, const std::vector<Shape*> &objectsList, Intersection &its)
 {
-    //
     // Write your code beleow
-    //
     for(size_t objIndex = 0; objIndex < objectsList.size(); objIndex ++)
 	{
 		// Get the current object
 		const Shape *obj = objectsList.at(objIndex);
-		if (obj->rayIntersect(cameraRay, its))
-			return true;
+		obj->rayIntersect(cameraRay, its);
 	}
-    //
-	return false;
+    return its.shape != NULL;
 }
 
 double interpolate(double val, double y0, double x0, double y1, double x1 )

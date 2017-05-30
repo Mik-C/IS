@@ -2,6 +2,6 @@
 
 Intersection::Intersection()
 {
-
+    shape = NULL;
 }
 
