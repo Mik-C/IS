@@ -1,19 +1,18 @@
 
 #include "directshader.h"
-#include "../materials/phong.h"
 #include "../core/utils.h"
 
-Directshader::Directshader() :
+DirectShader::DirectShader() :
         Shader(Vector3D(0,0,0)), maxDist(100000)
 {}
 
-Directshader::Directshader(double maxDist_, Vector3D bgColor_) :
+DirectShader::DirectShader(double maxDist_, Vector3D bgColor_) :
         Shader(bgColor_), maxDist(maxDist_)
 {}
 
-Directshader::~Directshader() {}
+DirectShader::~DirectShader() {}
 
-Vector3D Directshader::computeColor(const Ray &r, const std::vector<Shape *> &objList,
+Vector3D DirectShader::computeColor(const Ray &r, const std::vector<Shape *> &objList,
                                     const std::vector<PointLightSource> &lsList) const {
 	Intersection *its = new Intersection();
 	if (!Utils::getClosestIntersection(r, objList, *its))

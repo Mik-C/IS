@@ -4,12 +4,12 @@
 
 #include "shader.h"
 
-class Directshader : public Shader
+class DirectShader : public Shader
 {
 public:
-    Directshader();
-    Directshader(double maxDist_, Vector3D bgColor_);
-    ~Directshader();
+    DirectShader();
+    DirectShader(double maxDist_, Vector3D bgColor_);
+    ~DirectShader();
 
     virtual Vector3D computeColor(const Ray &r,
                                   const std::vector<Shape*> &objList,

@@ -51,43 +51,6 @@ set(SOURCE_FILES
         src/shapes/infiniteplane.cpp
         src/shapes/infiniteplane.h
         src/main.cpp
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/CL.command.1.tlog
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/CL.read.1.tlog
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/CL.write.1.tlog
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/link.command.1.tlog
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/link.read.1.tlog
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/link.write.1.tlog
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.tlog/RTIS_V2.lastbuildstate
-        VisualStudio2015/RTIS_V2/x64/Debug/bitmap.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/camera.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/depthshader.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/eqsolver.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/film.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/intersection.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/intersectionshader.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/main.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/material.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/matrix4x4.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/normalshader.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/ortographic.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/perspective.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/pointlightsource.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/ray.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.ilk
-        VisualStudio2015/RTIS_V2/x64/Debug/RTIS_V2.pdb
-        VisualStudio2015/RTIS_V2/x64/Debug/shader.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/shape.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/sphere.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/tester.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/utils.obj
-        VisualStudio2015/RTIS_V2/x64/Debug/vc140.idb
-        VisualStudio2015/RTIS_V2/x64/Debug/vc140.pdb
-        VisualStudio2015/RTIS_V2/x64/Debug/vector3d.obj
-        VisualStudio2015/RTIS_V2/output.bmp
-        VisualStudio2015/RTIS_V2/RTIS_V2.sln
-        VisualStudio2015/RTIS_V2/RTIS_V2.VC.db
-        VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj
-        VisualStudio2015/RTIS_V2/RTIS_V2.vcxproj.filters
         CMakeLists.txt)
 
 add_executable(RTIS_Students_V2_2017 ${SOURCE_FILES})

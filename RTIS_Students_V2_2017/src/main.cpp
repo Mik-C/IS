@@ -69,12 +69,16 @@ void buildSceneSphere(Camera* &cam, Film* &film,
 
     //Planes
     Shape *ip1 = new InfinitePlane(Vector3D(0,0,20), Vector3D(0,0,-1), white);
+    Shape *ip2 = new InfinitePlane(Vector3D(-10,0,0), Vector3D(1,0,0), white);
+    Shape *ip3 = new InfinitePlane(Vector3D(10,0,0), Vector3D(-1,0,0), white);
 
     // Store the objects in the object list
     objectsList->push_back(s1);
     objectsList->push_back(s2);
     objectsList->push_back(s3);
     objectsList->push_back(ip1);
+    objectsList->push_back(ip2);
+    objectsList->push_back(ip3);
     std::cout << objectsList->size() << "\n";
 
     /* ****** */
@@ -82,7 +86,7 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     /* ****** */
     // ADD YOUR LIGHT SOURCES HERE
 	lightSourceList = new std::vector<PointLightSource>;
-	PointLightSource l1 = PointLightSource(Vector3D(10.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
+	PointLightSource l1 = PointLightSource(Vector3D(6.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
 	PointLightSource l2 = PointLightSource(Vector3D(0.0, 10.0, 10.0), Vector3D(100.0, 100.0, 100.0));
     PointLightSource l3 = PointLightSource(Vector3D(-6.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
 	// DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
