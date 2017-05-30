@@ -33,10 +33,10 @@ Vector3D Directshader::computeColor(const Ray &r, const std::vector<Shape *> &ob
 		Vector3D Lp = ls.getIntensity(its->itsPoint);
 		Vector3D wo = (-r.d).normalized();
 		Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wo, wi);
-        std::cout << "r: " << r << "\n";
+       // std::cout << "r: " << r << "\n";
 		color += Utils::multiplyPerCanal(Lp, r);
 	}
-    std::cout << "Color: " << color << "\n";
+   // std::cout << "Color: " << color << "\n";
 	return color;
 		
 	
