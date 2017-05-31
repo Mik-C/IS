@@ -1,0 +1,18 @@
+Llums:
+Segons la descripció del projecte hem de crear llums que tinguin àrea, o més clarament, una àrea que desprengui llum:
+
+https://docs.unity3d.com/Manual/Lighting.html   <-- Area lights i emissive materials
+
+a diferència de les point lights que hem utilitzat fins ara.
+
+
+
+
+Aquí podem veure els efectes de les diferents fonts de llum:
+https://blender.stackexchange.com/questions/14562/how-to-get-consistent-lamp-strengths-in-cycles
+
+Estaria guay llegir-se això però....:
+https://hal.archives-ouvertes.fr/inria-00510136/document
+
+Aquí hi ha fórmules i algorismes:
+https://graphics.pixar.com/library/PhysicallyBasedLighting/paper.pdf
