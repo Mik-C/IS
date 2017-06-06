@@ -172,9 +172,9 @@ void buildSceneCornellBox(Camera* &cam, Film* &film,
     //lightSourceList->push_back(pointLS1);
     //lightSourceList->push_back(pointLS2);
     //lightSourceList->push_back(pointLS3);
-    LightSource* quadLS1 = new QuadLightSource(Vector3D(0, offset-Epsilon, offset), intensity, 20, Vector3D(0,-1,0),
+    LightSource* quadLS1 = new QuadLightSource(Vector3D(0, offset, offset), intensity, 50, Vector3D(0,-1,0),
                                                Vector3D(1,0,0), 1,1);
-    LightSource* quadLS2 = new QuadLightSource(Vector3D(-offset+Epsilon, 0, offset), intensity, 20, Vector3D(1,0,0),
+    LightSource* quadLS2 = new QuadLightSource(Vector3D(-offset, 0, offset), intensity, 50, Vector3D(1,0,0),
                                                Vector3D(0,1,0), 1,1);
     lightSourceList->push_back(quadLS1);
     lightSourceList->push_back(quadLS2);

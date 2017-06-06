@@ -71,7 +71,7 @@ Vector3D DirectShader::computeColor(const Ray &ray, const std::vector<Shape *> &
                 double distance = wi.length();
                 wi = wi.normalized();
                 Ray lray = Ray(its->itsPoint, wi);
-                lray.maxT = distance;
+                lray.maxT = distance-Epsilon;
                 if(Utils::hasIntersection(lray, objList))
                     continue;
 
