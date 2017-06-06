@@ -26,6 +26,7 @@
 
 #include "lightsources/lightsource.h"
 #include "lightsources/arealightsource.h"
+#include "lightsources/volumelightsource.h"
 
 void buildSceneSphere(Camera* &cam, Film* &film,
                       std::vector<Shape*>* &objectsList,
@@ -177,13 +178,25 @@ void buildSceneCornellBox(Camera* &cam, Film* &film,
     LightSource* quadLS2 = new QuadLightSource(Vector3D(-offset, 0, offset), intensity, 30, Vector3D(1,0,0),
                                                Vector3D(0,1,0), 1, 1);
     LightSource* quadBack1 = new QuadLightSource(Vector3D(0,0,3*offset), intensity, 30, Vector3D(0,0,-1),
-                                                Vector3D(0,1,0), 0.5, 3);
+                                                 Vector3D(0,1,0), offset, offset);
     LightSource* quadBack2 = new QuadLightSource(Vector3D(0,0,2.5*offset), intensity, 30, Vector3D(0,0,1),
-                                                 Vector3D(0,1,0), 0.5, 3);
+                                                 Vector3D(0,1,0), offset, offset);
+    LightSource* quadFront = new QuadLightSource(Vector3D(0,0,0), intensity, 30, Vector3D(0,0,1),
+                                                 Vector3D(1,0,0), offset, offset);
+    LightSource* ellipseBack1 = new QuadLightSource(Vector3D(0,0,3*offset), intensity, 50, Vector3D(0,0,-1),
+                                                 Vector3D(0,1,0), offset, offset);
+    LightSource* ellipseBack2 = new QuadLightSource(Vector3D(0,0,2.5*offset), intensity*9, 200, Vector3D(0,0,1),
+                                                 Vector3D(0,1,0), offset, offset);
+    LightSource* sphereLS1 = new SphereLightSource(Vector3D(0,0,1.5*offset), intensity*2, 100, Vector3D(1,0,0),
+                                                   Vector3D(0,1,0), 1);
     //lightSourceList->push_back(quadLS1);
     //lightSourceList->push_back(quadLS2);
-    lightSourceList->push_back(quadBack1);
-    lightSourceList->push_back(quadBack2);
+    //lightSourceList->push_back(quadBack1);
+    //lightSourceList->push_back(quadBack2);
+    //lightSourceList->push_back(quadFront);
+    //lightSourceList->push_back(ellipseBack1);
+    //lightSourceList->push_back(ellipseBack2);
+    lightSourceList->push_back(sphereLS1);
 }
 
 void buildSceneTest(Camera* &cam, Film* &film,
@@ -228,12 +241,20 @@ void buildSceneTest(Camera* &cam, Film* &film,
     /* ****** */
     lightSourceList = new std::vector<LightSource*>;
     Vector3D lightPosition1 = Vector3D(offset, offset*2, 0);
-    Vector3D intensity = Vector3D(10, 10, 10); // Radiant intensity (watts/sr)
+    Vector3D intensity = Vector3D(10, 10, 10)*10; // Radiant intensity (watts/sr)
     LightSource* pointLS1 = PointLightSource(lightPosition1, intensity);
-    LightSource* quadLS1 = new QuadLightSource(lightPosition1, intensity, 20, Vector3D(0,-1,0), Vector3D(1,0,0),3,3);
+    LightSource* quadLS1 = new QuadLightSource(lightPosition1, intensity, 100, Vector3D(0,-1,0), Vector3D(1,0,0),3,3);
+    LightSource* ellipseLS1 = new EllipseLightSource(lightPosition1, intensity, 50, Vector3D(0,-1,0), Vector3D(1,0,0),3,3);
+    LightSource* sphereLS1 = new SphereLightSource(Vector3D(offset,offset,0), intensity, 30, Vector3D(1,0,0), Vector3D(0,1,0), 1);
+    LightSource* sphereLS2 = new SphereLightSource(Vector3D(-offset,offset,0), intensity, 30, Vector3D(1,0,0), Vector3D(0,1,0), 1);
+    LightSource* cylLS1 = new CylinderLightSource(Vector3D(0,offset,0), intensity, 30, Vector3D(1,0,0), Vector3D(0,1,0), 1, 0.5);
 
     //lightSourceList->push_back(pointLS1);
-    lightSourceList->push_back(quadLS1);
+    //lightSourceList->push_back(quadLS1);
+    //lightSourceList->push_back(ellipseLS1);
+    //lightSourceList->push_back(sphereLS1);
+    //lightSourceList->push_back(sphereLS2);
+    lightSourceList->push_back(cylLS1);
 }
 
 void raytrace(Camera* &cam, Shader* &shader, Film* &film,
@@ -295,8 +316,8 @@ int main()
 
     // Build the scene
     //buildSceneSphere(cam, film, objectsList, lightSourceList);
-    buildSceneCornellBox(cam, film, objectsList, lightSourceList);
-    //buildSceneTest(cam, film, objectsList, lightSourceList);
+    //buildSceneCornellBox(cam, film, objectsList, lightSourceList);
+    buildSceneTest(cam, film, objectsList, lightSourceList);
 
     // Launch some rays!
     raytrace(cam, shader, film, objectsList, lightSourceList);

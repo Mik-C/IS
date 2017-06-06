@@ -15,7 +15,7 @@ public:
 
     unsigned int getSamples() const;
 
-    virtual Vector3D generatePoint() const;
+    virtual Vector3D generatePoint(const Vector3D &opos) const;
 
     virtual Vector3D getIntensity(const Vector3D &lpos, const Vector3D &opos) const;
 

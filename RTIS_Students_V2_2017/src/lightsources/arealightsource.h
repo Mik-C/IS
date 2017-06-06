@@ -26,7 +26,16 @@ public:
     QuadLightSource(Vector3D pos_, Vector3D intensity_, unsigned int samples_,
                     Vector3D normal_, Vector3D up_, double rH, double rV);
 
-    Vector3D generatePoint() const;
+    Vector3D generatePoint(const Vector3D &opos) const;
+};
+
+class EllipseLightSource : public AreaLightSource{
+public:
+    EllipseLightSource() = delete;
+    EllipseLightSource(Vector3D pos_, Vector3D intensity_, unsigned int samples_,
+                       Vector3D normal_, Vector3D up_, double rH, double rV);
+
+    Vector3D generatePoint(const Vector3D &opos) const;
 };
 
 #endif //RTIS_STUDENTS_V2_2017_AREALIGHTSOURCE_H

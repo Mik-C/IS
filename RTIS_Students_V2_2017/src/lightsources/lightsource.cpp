@@ -16,7 +16,7 @@ unsigned int LightSource::getSamples() const {
     return samples;
 }
 
-Vector3D LightSource::generatePoint() const {
+Vector3D LightSource::generatePoint(const Vector3D &opos) const {
     return pos;
 }
 

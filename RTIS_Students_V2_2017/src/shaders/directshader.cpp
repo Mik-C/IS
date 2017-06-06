@@ -66,7 +66,7 @@ Vector3D DirectShader::computeColor(const Ray &ray, const std::vector<Shape *> &
             Vector3D Light, reflectance;
 
             for(unsigned int i=0; i<samples; i++){
-                Vector3D lpos = ls->generatePoint();
+                Vector3D lpos = ls->generatePoint(its->itsPoint);
                 Vector3D wi = (lpos - its->itsPoint);
                 double distance = wi.length();
                 wi = wi.normalized();

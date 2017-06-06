@@ -30,7 +30,11 @@ struct Vector3D
     Vector3D clamp(const double min, const double max);
 
     // Structure data
-    double x, y, z;
+    union{
+        struct{double x, y, z;};
+        double v[3];
+    };
+
 };
 
 // Stream insertion operator (since it takes the user-defined type at the right,

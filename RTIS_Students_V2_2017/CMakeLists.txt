@@ -34,6 +34,8 @@ set(SOURCE_FILES
         src/lightsources/arealightsource.h
         src/lightsources/lightsource.cpp
         src/lightsources/lightsource.h
+        src/lightsources/volumelightsource.cpp
+        src/lightsources/volumelightsource.h
         src/materials/material.cpp
         src/materials/material.h
         src/materials/mirror.cpp
