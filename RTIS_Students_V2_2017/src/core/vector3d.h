@@ -27,6 +27,7 @@ struct Vector3D
     double length()      const;
     double lengthSq()    const;
     Vector3D normalized() const;
+    Vector3D clamp(const double min, const double max);
 
     // Structure data
     double x, y, z;

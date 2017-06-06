@@ -106,6 +106,16 @@ Vector3D Vector3D::normalized() const
     return (*this)/length();
 }
 
+Vector3D Vector3D::clamp(const double min, const double max){
+    x = x < min ? min : x;
+    x = x > max ? max : x;
+    y = y < min ? min : y;
+    y = y > max ? max : y;
+    z = z < min ? min : z;
+    z = z > max ? max : z;
+    return (*this);
+}
+
 // Stream insertion operator
 std::ostream& operator<<(std::ostream& out, const Vector3D &v)
 {

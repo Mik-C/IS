@@ -81,7 +81,7 @@ Vector3D DirectShader::computeColor(const Ray &ray, const std::vector<Shape *> &
             }
             Light /= samples;
             reflectance /= samples;
-            color += Utils::multiplyPerCanal(Light, reflectance);
+            color += Utils::multiplyPerCanal(Light.clamp(0,1), reflectance.clamp(0,1));
 		}
 	}
 	return color;
