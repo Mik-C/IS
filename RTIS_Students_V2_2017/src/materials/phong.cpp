@@ -15,7 +15,7 @@ Phong::~Phong() {}
 
 Vector3D Phong::getReflectance(const Vector3D &n, const Vector3D &wo, const Vector3D &wi) const {
     Vector3D r_d = k_d * (dot(wi, n));
-    Vector3D wr = (((n * dot(n, wi)) * 2) - wi).normalized();
+    Vector3D wr = (((n * dot(n, wi)) * 2) - wi);
     Vector3D r_s = k_s * (pow(dot(wo, wr), s));
 
     return r_d + r_s;

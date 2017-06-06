@@ -24,9 +24,12 @@
 #include "materials/mirror.h"
 #include "materials/transmissive.h"
 
+#include "lightsources/lightsource.h"
+#include "lightsources/arealightsource.h"
+
 void buildSceneSphere(Camera* &cam, Film* &film,
                       std::vector<Shape*>* &objectsList,
-                      std::vector<PointLightSource>* &lightSourceList)
+                      std::vector<LightSource*>* &lightSourceList)
 {
     /* **************************** */
     /* Declare and place the camera */
@@ -88,10 +91,10 @@ void buildSceneSphere(Camera* &cam, Film* &film,
     /* Lights */
     /* ****** */
     // ADD YOUR LIGHT SOURCES HERE
-	lightSourceList = new std::vector<PointLightSource>;
-	PointLightSource l1 = PointLightSource(Vector3D(6.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
-	PointLightSource l2 = PointLightSource(Vector3D(0.0, 10.0, 10.0), Vector3D(100.0, 100.0, 100.0));
-    PointLightSource l3 = PointLightSource(Vector3D(-6.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
+	lightSourceList = new std::vector<LightSource*>;
+	LightSource* l1 = PointLightSource(Vector3D(6.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
+	LightSource* l2 = PointLightSource(Vector3D(0.0, 10.0, 10.0), Vector3D(100.0, 100.0, 100.0));
+    LightSource* l3 = PointLightSource(Vector3D(-6.0, 0.0, 0.0), Vector3D(100.0, 100.0, 100.0));
 	// DO NOT FORGET TO STORE THE LIGHT SOURCES IN THE "lightSourceList"
 	lightSourceList->push_back(l1);
 	lightSourceList->push_back(l2);
@@ -100,7 +103,7 @@ void buildSceneSphere(Camera* &cam, Film* &film,
 }
 
 void buildSceneCornellBox(Camera* &cam, Film* &film,
-                          std::vector<Shape*>* &objectsList, std::vector<PointLightSource>* &lightSourceList)
+                          std::vector<Shape*>* &objectsList, std::vector<LightSource*>* &lightSourceList)
 {
     /* **************************** */
     /* Declare and place the camera */
@@ -158,21 +161,77 @@ void buildSceneCornellBox(Camera* &cam, Film* &film,
     /* ****** */
     /* Lights */
     /* ****** */
-    lightSourceList = new std::vector<PointLightSource>;
+    lightSourceList = new std::vector<LightSource*>;
     Vector3D lightPosition1 = Vector3D(0, offset-1, 2*offset);
     Vector3D lightPosition2 = Vector3D(0, offset-1, 0);
     Vector3D lightPosition3 = Vector3D(0, offset-1, offset);
     Vector3D intensity = Vector3D(10, 10, 10); // Radiant intensity (watts/sr)
-    PointLightSource pointLS1(lightPosition1, intensity);
-    PointLightSource pointLS2(lightPosition2, intensity);
-    PointLightSource pointLS3(lightPosition3, intensity);
-    lightSourceList->push_back(pointLS1);
-    lightSourceList->push_back(pointLS2);
-    lightSourceList->push_back(pointLS3);
+    LightSource* pointLS1 = PointLightSource(lightPosition1, intensity);
+    LightSource* pointLS2 = PointLightSource(lightPosition2, intensity);
+    LightSource* pointLS3 = PointLightSource(lightPosition3, intensity);
+    //lightSourceList->push_back(pointLS1);
+    //lightSourceList->push_back(pointLS2);
+    //lightSourceList->push_back(pointLS3);
+    LightSource* quadLS1 = new QuadLightSource(Vector3D(0, offset-Epsilon, offset), intensity, 20, Vector3D(0,-1,0),
+                                               Vector3D(1,0,0), 1,1);
+    LightSource* quadLS2 = new QuadLightSource(Vector3D(-offset+Epsilon, 0, offset), intensity, 20, Vector3D(1,0,0),
+                                               Vector3D(0,1,0), 1,1);
+    lightSourceList->push_back(quadLS1);
+    lightSourceList->push_back(quadLS2);
+}
+
+void buildSceneTest(Camera* &cam, Film* &film,
+                          std::vector<Shape*>* &objectsList, std::vector<LightSource*>* &lightSourceList)
+{
+    /* **************************** */
+    /* Declare and place the camera */
+    /* **************************** */
+    Matrix4x4 cameraToWorld = Matrix4x4::translate(Vector3D(0, 0, -3));
+    double fovDegrees = 60;
+    double fovRadians = Utils::degreesToRadians(fovDegrees);
+    cam = new PerspectiveCamera(cameraToWorld, fovRadians, *film);
+
+    /* ********* */
+    /* Materials */
+    /* ********* */
+    Material *redDiffuse   = new Phong(Vector3D(0.7, 0.2, 0.3), Vector3D(0, 0, 0), 100);
+    Material *greenDiffuse = new Phong(Vector3D(0.2, 0.7, 0.3), Vector3D(0, 0, 0), 100);
+    Material *greyDiffuse  = new Phong(Vector3D(0.8, 0.8, 0.8), Vector3D(0, 0, 0), 100);
+    Material *blueDiffuse  = new Phong(Vector3D(0.3, 0.2, 0.7), Vector3D(0, 0, 0), 100);
+    Material *transmissive = new Transmissive(1.1, Vector3D(1));
+    Material *mirror       = new Mirror(Vector3D(1, 0.9, 0.85));
+    Material *red_100      = new Phong(Vector3D(0.7, 0.2, 0.3), Vector3D(0.7, 0.7, 0.2), 100);
+
+    /* ******* */
+    /* Objects */
+    /* ******* */
+    objectsList = new std::vector<Shape*>;
+    double offset = 3.0;
+    Matrix4x4 idTransform;
+    Shape *bottomPlan = new InfinitePlane(Vector3D( 0, -0.7, 0), Vector3D(0, 1, 0), greyDiffuse);
+    objectsList->push_back(bottomPlan);
+
+    // Place the Spheres inside the Cornell Box
+    Matrix4x4 sphereTransform1;
+    sphereTransform1 = Matrix4x4::translate(Vector3D(0, 0, 0));
+    Shape *s1 = new Sphere (0.5, sphereTransform1, redDiffuse);
+    objectsList->push_back(s1);
+
+    /* ****** */
+    /* Lights */
+    /* ****** */
+    lightSourceList = new std::vector<LightSource*>;
+    Vector3D lightPosition1 = Vector3D(offset, offset*2, 0);
+    Vector3D intensity = Vector3D(10, 10, 10); // Radiant intensity (watts/sr)
+    LightSource* pointLS1 = PointLightSource(lightPosition1, intensity);
+    LightSource* quadLS1 = new QuadLightSource(lightPosition1, intensity, 20, Vector3D(0,-1,0), Vector3D(1,0,0),3,3);
+
+    //lightSourceList->push_back(pointLS1);
+    lightSourceList->push_back(quadLS1);
 }
 
 void raytrace(Camera* &cam, Shader* &shader, Film* &film,
-              std::vector<Shape*>* &objectsList, std::vector<PointLightSource>* &lightSourceList)
+              std::vector<Shape*>* &objectsList, std::vector<LightSource*>* &lightSourceList)
 {
     unsigned int sizeBar = 40;
 
@@ -192,6 +251,7 @@ void raytrace(Camera* &cam, Shader* &shader, Film* &film,
 
             // Generate the camera ray
             Ray cameraRay = cam->generateRay(x, y);
+            //cameraRay = cam->generateRay(0.5, 0.5);
 
             // Compute ray color according to the used shader
             Vector3D pixelColor = shader->computeColor( cameraRay, *objectsList, *lightSourceList );
@@ -219,17 +279,18 @@ int main()
     //Shader *shader = new IntersectionShader (intersectionColor, bgColor);
 	//Shader *shader = new NormalShader(bgColor);
     //Shader *shader = new DepthShader(Vector3D(0.4, 1, 0.4), 40, bgColor);
-	//Shader *shader = new DirectShader(bgColor);
-    Shader *shader = new GlobalShader(bgColor, Vector3D(0.1,0.1,0.1));
+	Shader *shader = new DirectShader(bgColor);
+    //Shader *shader = new GlobalShader(bgColor, Vector3D(0.1,0.1,0.1));
 
     // Declare pointers to all the variables which describe the scene
     Camera *cam;
     std::vector<Shape*> *objectsList;
-    std::vector<PointLightSource> *lightSourceList;
+    std::vector<LightSource*> *lightSourceList;
 
     // Build the scene
     //buildSceneSphere(cam, film, objectsList, lightSourceList);
     buildSceneCornellBox(cam, film, objectsList, lightSourceList);
+    //buildSceneTest(cam, film, objectsList, lightSourceList);
 
     // Launch some rays!
     raytrace(cam, shader, film, objectsList, lightSourceList);

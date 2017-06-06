@@ -15,7 +15,7 @@ GlobalShader::GlobalShader(Vector3D bgColor_, Vector3D ambient) :
 GlobalShader::~GlobalShader() {}
 
 Vector3D GlobalShader::computeColor(const Ray &ray, const std::vector<Shape *> &objList,
-                                    const std::vector<PointLightSource> &lsList) const {
+                                    const std::vector<LightSource*> &lsList) const {
 
     if(ray.depth > 10000)
         return Vector3D(0,0,0);
@@ -62,20 +62,26 @@ Vector3D GlobalShader::computeColor(const Ray &ray, const std::vector<Shape *> &
         }
 
     }else if(its->shape->getMaterial().hasDiffuseOrGlossy()){
-        for(PointLightSource const &ls : lsList)
+        for(LightSource* const &ls : lsList)
         {
-            Vector3D wi = (ls.getPosition() - its->itsPoint);
-            double distance = wi.length();
-            wi = wi.normalized();
-            Ray lray = Ray(its->itsPoint, wi);
-            lray.maxT = distance;
-            if(Utils::hasIntersection(lray, objList))
-                continue;
+            unsigned int samples = ls->getSamples();
+            Vector3D color_;
+            for(unsigned int i=0; i<samples; i++){
+                Vector3D lpos = ls->generatePoint();
+                Vector3D wi = (lpos - its->itsPoint);
+                double distance = wi.length();
+                Ray lray = Ray(its->itsPoint, wi);
+                lray.maxT = distance;
+                if(Utils::hasIntersection(lray, objList))
+                    continue;
 
-            Vector3D Lp = ls.getIntensity(its->itsPoint);
-            Vector3D wo = (-ray.d).normalized();
-            Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wo, wi);
-            d_color += Utils::multiplyPerCanal(Lp, r);
+                Vector3D Lp = ls->getIntensity(lpos, its->itsPoint);
+                Vector3D wo = (-ray.d);
+                Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wo, wi);
+                color_ += Utils::multiplyPerCanal(Lp, r);
+            }
+            color_ /= samples;
+            d_color += color_;
         }
     }
 
@@ -83,7 +89,7 @@ Vector3D GlobalShader::computeColor(const Ray &ray, const std::vector<Shape *> &
 }
 
 Vector3D GlobalShader::indirectColor(const Intersection &its, const Ray &ray, const std::vector<Shape *> &objList,
-                                     const std::vector<PointLightSource> &lsList) const {
+                                     const std::vector<LightSource*> &lsList) const {
     Vector3D Ip;
     if(its.shape->getMaterial().hasDiffuseOrGlossy()) {
         if (ray.depth == 0) {

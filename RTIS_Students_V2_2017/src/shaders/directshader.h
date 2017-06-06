@@ -13,7 +13,7 @@ public:
 
     virtual Vector3D computeColor(const Ray &r,
                                   const std::vector<Shape*> &objList,
-                                  const std::vector<PointLightSource> &lsList) const;
+                                  const std::vector<LightSource*> &lsList) const;
 
 private:
 };

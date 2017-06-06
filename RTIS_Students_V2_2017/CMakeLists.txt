@@ -30,8 +30,10 @@ set(SOURCE_FILES
         src/core/utils.h
         src/core/vector3d.cpp
         src/core/vector3d.h
-        src/lightsources/pointlightsource.cpp
-        src/lightsources/pointlightsource.h
+        src/lightsources/arealightsource.cpp
+        src/lightsources/arealightsource.h
+        src/lightsources/lightsource.cpp
+        src/lightsources/lightsource.h
         src/materials/material.cpp
         src/materials/material.h
         src/materials/mirror.cpp
@@ -58,7 +60,6 @@ set(SOURCE_FILES
         src/shapes/sphere.h
         src/shapes/infiniteplane.cpp
         src/shapes/infiniteplane.h
-        src/main.cpp
-        CMakeLists.txt src/materials/transmissive.cpp src/materials/transmissive.h)
+        src/main.cpp)
 
 add_executable(RTIS_Students_V2_2017 ${SOURCE_FILES})

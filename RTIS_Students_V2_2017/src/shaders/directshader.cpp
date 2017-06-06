@@ -13,7 +13,7 @@ DirectShader::DirectShader(Vector3D bgColor_) :
 DirectShader::~DirectShader() {}
 
 Vector3D DirectShader::computeColor(const Ray &ray, const std::vector<Shape *> &objList,
-                                    const std::vector<PointLightSource> &lsList) const {
+                                    const std::vector<LightSource*> &lsList) const {
 
 	if(ray.depth > 10000)
 		return Vector3D(0,0,0);
@@ -21,6 +21,7 @@ Vector3D DirectShader::computeColor(const Ray &ray, const std::vector<Shape *> &
     Intersection *its = new Intersection();
 	if (!Utils::getClosestIntersection(ray, objList, *its))
 		return bgColor;
+    its->normal = its->normal.normalized();
 
 	Vector3D color = Vector3D(0,0,0);
 
@@ -59,20 +60,28 @@ Vector3D DirectShader::computeColor(const Ray &ray, const std::vector<Shape *> &
         }
 
     }else if(its->shape->getMaterial().hasDiffuseOrGlossy()){
-		for(PointLightSource const &ls : lsList)
+		for(LightSource* const &ls : lsList)
 		{
-			Vector3D wi = (ls.getPosition() - its->itsPoint);
-			double distance = wi.length();
-			wi = wi.normalized();
-			Ray lray = Ray(its->itsPoint, wi);
-			lray.maxT = distance;
-			if(Utils::hasIntersection(lray, objList))
-				continue;
+            unsigned int samples = ls->getSamples();
+            Vector3D Light, reflectance;
 
-			Vector3D Lp = ls.getIntensity(its->itsPoint);
-			Vector3D wo = (-ray.d).normalized();
-			Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wo, wi);
-			color += Utils::multiplyPerCanal(Lp, r);
+            for(unsigned int i=0; i<samples; i++){
+                Vector3D lpos = ls->generatePoint();
+                Vector3D wi = (lpos - its->itsPoint);
+                double distance = wi.length();
+                wi = wi.normalized();
+                Ray lray = Ray(its->itsPoint, wi);
+                lray.maxT = distance;
+                if(Utils::hasIntersection(lray, objList))
+                    continue;
+
+                Light += ls->getIntensity(lpos, its->itsPoint);
+                Vector3D wo = (-ray.d).normalized();
+                reflectance += its->shape->getMaterial().getReflectance(its->normal, wo, wi);
+            }
+            Light /= samples;
+            reflectance /= samples;
+            color += Utils::multiplyPerCanal(Light, reflectance);
 		}
 	}
 	return color;
