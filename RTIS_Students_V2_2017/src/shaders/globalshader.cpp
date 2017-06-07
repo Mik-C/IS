@@ -65,23 +65,25 @@ Vector3D GlobalShader::computeColor(const Ray &ray, const std::vector<Shape *> &
         for(LightSource* const &ls : lsList)
         {
             unsigned int samples = ls->getSamples();
-            Vector3D color_;
+            Vector3D Light, reflectance;
+
             for(unsigned int i=0; i<samples; i++){
                 Vector3D lpos = ls->generatePoint(its->itsPoint);
                 Vector3D wi = (lpos - its->itsPoint);
                 double distance = wi.length();
+                wi = wi.normalized();
                 Ray lray = Ray(its->itsPoint, wi);
-                lray.maxT = distance;
+                lray.maxT = distance-Epsilon;
                 if(Utils::hasIntersection(lray, objList))
                     continue;
 
-                Vector3D Lp = ls->getIntensity(lpos, its->itsPoint);
-                Vector3D wo = (-ray.d);
-                Vector3D r  = its->shape->getMaterial().getReflectance(its->normal, wo, wi);
-                color_ += Utils::multiplyPerCanal(Lp, r);
+                Light += ls->getIntensity(lpos, its->itsPoint);
+                Vector3D wo = (-ray.d).normalized();
+                reflectance += its->shape->getMaterial().getReflectance(its->normal, wo, wi);
             }
-            color_ /= samples;
-            d_color += color_;
+            Light /= samples;
+            reflectance /= samples;
+            d_color += Utils::multiplyPerCanal(Light.clamp(0,1), reflectance.clamp(0,1));
         }
     }
 

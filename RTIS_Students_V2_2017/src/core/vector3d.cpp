@@ -1,4 +1,5 @@
 #include <cmath>
+#include <random>
 #include "vector3d.h"
 
 Vector3D::Vector3D() : x(0), y(0), z(0)
@@ -107,12 +108,17 @@ Vector3D Vector3D::normalized() const
 }
 
 Vector3D Vector3D::clamp(const double min, const double max){
-    x = x < min ? min : x;
-    x = x > max ? max : x;
-    y = y < min ? min : y;
-    y = y > max ? max : y;
-    z = z < min ? min : z;
-    z = z > max ? max : z;
+    x = x < min ? min : x > max ? max : x;
+    y = y < min ? min : y > max ? max : y;
+    z = z < min ? min : z > max ? max : z;
+    return (*this);
+}
+
+Vector3D Vector3D::rand() {
+    x = (((double)random() / RAND_MAX) - 0.5)*2;
+    y = (((double)random() / RAND_MAX) - 0.5)*2;
+    z = (((double)random() / RAND_MAX) - 0.5)*2;
+    normalized();
     return (*this);
 }
 

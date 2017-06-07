@@ -3,7 +3,6 @@
 #define RTIS_STUDENTS_V2_2017_AREALIGHTSOURCE_H
 
 #include "lightsource.h"
-#include <random>
 
 class AreaLightSource : public LightSource{
 public:

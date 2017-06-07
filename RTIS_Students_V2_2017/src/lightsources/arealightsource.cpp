@@ -1,5 +1,6 @@
 
 #include "arealightsource.h"
+#include "../core/ray.h"
 
 AreaLightSource::AreaLightSource(Vector3D pos_, Vector3D intensity_, unsigned int samples_,
                                  Vector3D normal_, Vector3D up_, double rH, double rV) :

@@ -2,7 +2,6 @@
 #include "volumelightsource.h"
 #include "../core/hemisphericalsampler.h"
 #include "../core/matrix4x4.h"
-#include <random>
 
 VolumeLightSource::VolumeLightSource(Vector3D pos_, Vector3D intensity_, unsigned int samples_, Vector3D x_,
                                      Vector3D xy_, double rX_, double rY_, double rZ_) :

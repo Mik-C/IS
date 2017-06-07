@@ -196,7 +196,7 @@ void buildSceneCornellBox(Camera* &cam, Film* &film,
     //lightSourceList->push_back(quadFront);
     //lightSourceList->push_back(ellipseBack1);
     //lightSourceList->push_back(ellipseBack2);
-    lightSourceList->push_back(sphereLS1);
+    //lightSourceList->push_back(sphereLS1);
 }
 
 void buildSceneTest(Camera* &cam, Film* &film,
@@ -240,21 +240,27 @@ void buildSceneTest(Camera* &cam, Film* &film,
     /* Lights */
     /* ****** */
     lightSourceList = new std::vector<LightSource*>;
-    Vector3D lightPosition1 = Vector3D(offset, offset*2, 0);
+    Vector3D lightPosition1 = Vector3D(offset,offset,0);
     Vector3D intensity = Vector3D(10, 10, 10)*10; // Radiant intensity (watts/sr)
     LightSource* pointLS1 = PointLightSource(lightPosition1, intensity);
     LightSource* quadLS1 = new QuadLightSource(lightPosition1, intensity, 100, Vector3D(0,-1,0), Vector3D(1,0,0),3,3);
     LightSource* ellipseLS1 = new EllipseLightSource(lightPosition1, intensity, 50, Vector3D(0,-1,0), Vector3D(1,0,0),3,3);
-    LightSource* sphereLS1 = new SphereLightSource(Vector3D(offset,offset,0), intensity, 30, Vector3D(1,0,0), Vector3D(0,1,0), 1);
+    LightSource* sphereLS1 = new SphereLightSource(lightPosition1, intensity, 30, Vector3D(1,0,0), Vector3D(0,1,0), 1);
     LightSource* sphereLS2 = new SphereLightSource(Vector3D(-offset,offset,0), intensity, 30, Vector3D(1,0,0), Vector3D(0,1,0), 1);
-    LightSource* cylLS1 = new CylinderLightSource(Vector3D(0,offset,0), intensity, 30, Vector3D(1,0,0), Vector3D(0,1,0), 1, 0.5);
+    LightSource* cylLS1 = new CylinderLightSource(lightPosition1, intensity, 200, Vector3D(1,0,0), Vector3D(0,1,0), 1, 0.5);
+    LightSource* focusLS1 = new FocusLightSource(lightPosition1, intensity, 1, -lightPosition1, M_PI_4/4);
+    LightSource* focusALS1 = new FocusAreaLightSource(lightPosition1, intensity, 100, -lightPosition1, M_PI_4/4, 1);
+    LightSource* focusALS2 = new FocusAreaLightSource(Vector3D(-offset,offset,0), intensity, 1000, -Vector3D(-offset,offset,0), M_PI_4/4, 1);
 
     //lightSourceList->push_back(pointLS1);
     //lightSourceList->push_back(quadLS1);
     //lightSourceList->push_back(ellipseLS1);
     //lightSourceList->push_back(sphereLS1);
     //lightSourceList->push_back(sphereLS2);
-    lightSourceList->push_back(cylLS1);
+    //lightSourceList->push_back(cylLS1);
+    //lightSourceList->push_back(focusLS1);
+    lightSourceList->push_back(focusALS1);
+    //lightSourceList->push_back(focusALS2);
 }
 
 void raytrace(Camera* &cam, Shader* &shader, Film* &film,
