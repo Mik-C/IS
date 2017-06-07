@@ -75,9 +75,6 @@
     <ClCompile Include="..\..\src\core\intersection.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\lightsources\pointlightsource.cpp">
-      <Filter>src\lightsources</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\materials\material.cpp">
       <Filter>src\materials</Filter>
     </ClCompile>
@@ -104,6 +101,30 @@
     </ClCompile>
     <ClCompile Include="..\..\src\shaders\directshader.cpp">
       <Filter>src\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\hemisphericalsampler.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lightsources\arealightsource.cpp">
+      <Filter>src\lightsources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lightsources\lightsource.cpp">
+      <Filter>src\lightsources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lightsources\volumelightsource.cpp">
+      <Filter>src\lightsources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\materials\mirror.cpp">
+      <Filter>src\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\materials\transmissive.cpp">
+      <Filter>src\materials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shaders\globalshader.cpp">
+      <Filter>src\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shapes\infiniteplane.cpp">
+      <Filter>src\shapes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,9 +164,6 @@
     <ClInclude Include="..\..\src\core\intersection.h">
       <Filter>src\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\lightsources\pointlightsource.h">
-      <Filter>src\lightsources</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\materials\material.h">
       <Filter>src\materials</Filter>
     </ClInclude>
@@ -172,6 +190,30 @@
     </ClInclude>
     <ClInclude Include="..\..\src\shaders\directshader.h">
       <Filter>src\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\core\hemisphericalsampler.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lightsources\arealightsource.h">
+      <Filter>src\lightsources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lightsources\lightsource.h">
+      <Filter>src\lightsources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lightsources\volumelightsource.h">
+      <Filter>src\lightsources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\materials\mirror.h">
+      <Filter>src\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\materials\transmissive.h">
+      <Filter>src\materials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shaders\globalshader.h">
+      <Filter>src\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shapes\infiniteplane.h">
+      <Filter>src\shapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
