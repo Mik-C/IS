@@ -28,7 +28,7 @@ struct Vector3D
     double lengthSq()    const;
     Vector3D normalized() const;
     Vector3D clamp(const double min, const double max);
-    Vector3D rand();
+    Vector3D randomVector();
 
     // Structure data
     union{

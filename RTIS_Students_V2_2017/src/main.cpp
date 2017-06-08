@@ -1,3 +1,5 @@
+
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <stdlib.h> /* srand, rand */
 #include <vector>
@@ -17,6 +19,7 @@
 #include "shaders/intersectionshader.h"
 #include "shaders/normalshader.h"
 #include "shaders/depthshader.h"
+
 #include "shaders/directshader.h"
 #include "shaders/globalshader.h"
 
@@ -27,6 +30,9 @@
 #include "lightsources/lightsource.h"
 #include "lightsources/arealightsource.h"
 #include "lightsources/volumelightsource.h"
+
+#include <cmath>
+#include <ctime>
 
 void buildSceneSphere(Camera* &cam, Film* &film,
                       std::vector<Shape*>* &objectsList,
@@ -297,6 +303,9 @@ void raytrace(Camera* &cam, Shader* &shader, Film* &film,
 
 int main()
 {
+	const clock_t begin_time = clock();
+
+
     std::string separator     = "\n----------------------------------------------\n";
     std::string separatorStar = "\n**********************************************\n";
     std::cout << separator << "RTIS - Ray Tracer for \"Imatge Sintetica\"" << separator << std::endl;
@@ -329,9 +338,9 @@ int main()
     raytrace(cam, shader, film, objectsList, lightSourceList);
 
     // Save the final result to file
-    std::cout << "\n\nSaving the result to file output.bmp\n" << std::endl;
+    std::cout << "\nSaving the result to file output.bmp\n" << std::endl;
     film->save();
 
-    std::cout << "\n\n" << std::endl;
+	std::cout << float(clock() - begin_time) / CLOCKS_PER_SEC << "\n\n\n";
     return 0;
 }

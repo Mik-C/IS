@@ -1,6 +1,9 @@
 
+#define _USE_MATH_DEFINES
 #include "arealightsource.h"
 #include "../core/ray.h"
+
+#include <cmath>
 
 AreaLightSource::AreaLightSource(Vector3D pos_, Vector3D intensity_, unsigned int samples_,
                                  Vector3D normal_, Vector3D up_, double rH, double rV) :
@@ -20,8 +23,8 @@ QuadLightSource::QuadLightSource(Vector3D pos_, Vector3D intensity_, unsigned in
 {}
 
 Vector3D QuadLightSource::generatePoint(const Vector3D &opos) const {
-    double x = (((double)random() / RAND_MAX) - 0.5)*2;
-    double y = (((double)random() / RAND_MAX) - 0.5)*2;
+    double x = (((double)rand() / RAND_MAX) - 0.5)*2;
+    double y = (((double)rand() / RAND_MAX) - 0.5)*2;
     return interpolatePoint(x, y);
 }
 
@@ -31,8 +34,8 @@ EllipseLightSource::EllipseLightSource(Vector3D pos_, Vector3D intensity_, unsig
 {}
 
 Vector3D EllipseLightSource::generatePoint(const Vector3D &opos) const {
-    double t = 2*M_PI*((double)random() / RAND_MAX);
-    double r = sqrt(((double)random() / RAND_MAX));
+    double t = 2*M_PI*((double)rand() / RAND_MAX);
+    double r = sqrt(((double)rand() / RAND_MAX));
     double x = r*cos(t);
     double y = r*sin(t);
     return interpolatePoint(x, y);

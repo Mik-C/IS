@@ -1,4 +1,5 @@
 
+#define _USE_MATH_DEFINES
 #include "volumelightsource.h"
 #include "../core/hemisphericalsampler.h"
 #include "../core/matrix4x4.h"
@@ -43,9 +44,9 @@ Vector3D CylinderLightSource::generatePoint(const Vector3D &opos) const {
     Vector3D closestPoint = (pos - opos) - vX*dot((pos - opos), vX);
 
     Vector3D normal = frameInv.transformVector(opos - closestPoint).normalized();
-    double phi = acos((((double)random() / RAND_MAX) - 0.5)*2) - M_PI_2;
+    double phi = acos((((double)rand() / RAND_MAX) - 0.5)*2) - M_PI_2;
 
-    Vector3D P = Vector3D((((double)random() / RAND_MAX) - 0.5)*2, 0, 0);
+    Vector3D P = Vector3D((((double)rand() / RAND_MAX) - 0.5)*2, 0, 0);
     P = P + normal*rX;
     P.y = P.y*sin(phi);
     P.z = P.z*cos(phi);

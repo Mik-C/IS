@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <random>
 #include "vector3d.h"
@@ -114,10 +115,10 @@ Vector3D Vector3D::clamp(const double min, const double max){
     return (*this);
 }
 
-Vector3D Vector3D::rand() {
-    x = (((double)random() / RAND_MAX) - 0.5)*2;
-    y = (((double)random() / RAND_MAX) - 0.5)*2;
-    z = (((double)random() / RAND_MAX) - 0.5)*2;
+Vector3D Vector3D::randomVector() {
+    x = (((double)rand() / RAND_MAX) - 0.5)*2;
+    y = (((double)rand() / RAND_MAX) - 0.5)*2;
+    z = (((double)rand() / RAND_MAX) - 0.5)*2;
     normalized();
     return (*this);
 }

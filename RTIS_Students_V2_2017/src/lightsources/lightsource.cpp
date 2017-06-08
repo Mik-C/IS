@@ -1,6 +1,6 @@
-
+#define _USE_MATH_DEFINES
 #include "lightsource.h"
-
+#include <cmath>
 
 LightSource::LightSource(Vector3D pos_, Vector3D intensity_, unsigned int samples_) :
         pos(pos_), intensity(intensity_), samples(samples_) {}
@@ -46,15 +46,15 @@ FocusAreaLightSource::FocusAreaLightSource(Vector3D pos_, Vector3D intensity_, u
         FocusLightSource(pos_+normal_.normalized()*dist_, intensity_, samples_, normal_, angle_)
 {
     Vector3D rnd;
-    rnd.rand();
+    rnd.randomVector();
     vX = cross(normal_, rnd).normalized();
     vY = cross(vX, normal_).normalized();
     r = tan(angle_)*dist_;
 }
 
 Vector3D FocusAreaLightSource::generatePoint(const Vector3D &opos) const {
-    double t = 2*M_PI*((double)random() / RAND_MAX);
-    double r = sqrt(((double)random() / RAND_MAX));
+    double t = 2*M_PI*((double)rand() / RAND_MAX);
+    double r = sqrt(((double)rand() / RAND_MAX));
     double x = r*cos(t);
     double y = r*sin(t);
     return pos + vX*(x*r) + vY*(y*r);
